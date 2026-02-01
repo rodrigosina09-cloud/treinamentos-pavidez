@@ -1,10 +1,4 @@
-/* ===============================
-   RESET
-================================ */
-* {
-  box-sizing: border-box;
-}
-
+/* RESET */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,39 +6,28 @@ body {
   color: #222;
 }
 
-/* ===============================
-   HEADER
-================================ */
+/* TOPO */
 .topo {
-  background-color: #ffffff;
+  background-color: #fff;
   border-bottom: 4px solid #f2b705;
 }
 
 .topo-container {
   max-width: 1200px;
-  height: 80px;
   margin: auto;
-  padding: 0 25px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO CONTROLADA */
-.logo-box {
-  display: flex;
-  align-items: center;
+/* LOGO PEQUENA E CONTROLADA */
+.logo {
+  max-height: 45px;     /* 🔥 CONTROLE REAL */
+  width: auto;
 }
 
-.logo-box img {
-  height: 48px;          /* 🔥 tamanho correto */
-  max-width: 180px;     /* trava horizontal */
-  object-fit: contain;
-}
-
-/* ===============================
-   MENU
-================================ */
+/* MENU */
 .menu a {
   margin-left: 22px;
   text-decoration: none;
@@ -60,26 +43,23 @@ body {
   border-bottom: 2px solid #f2b705;
 }
 
-/* ===============================
-   CONTEÚDO
-================================ */
+/* CONTEÚDO */
 main {
   max-width: 1200px;
   margin: 40px auto;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 40px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 h1 {
-  font-size: 28px;
   margin-top: 0;
 }
 
 h2 {
-  margin-top: 35px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 16px;
   padding-left: 14px;
   border-left: 6px solid #f2b705;
 }
@@ -89,23 +69,18 @@ p {
   font-size: 16px;
 }
 
-ul {
+/* LISTA */
+.lista-treinamentos {
+  list-style: disc;
   padding-left: 20px;
 }
 
-li {
-  margin-bottom: 6px;
-}
-
-/* ===============================
-   RODAPÉ
-================================ */
+/* RODAPÉ */
 footer {
-  background-color: #ffffff;
+  background-color: #fff;
   border-top: 3px solid #f2b705;
   text-align: center;
   padding: 18px;
   font-size: 14px;
   color: #333;
-  margin-top: 40px;
 }
