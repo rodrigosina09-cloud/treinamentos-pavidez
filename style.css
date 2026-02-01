@@ -31,7 +31,7 @@ body {
 
 /* LOGO PEQUENA À ESQUERDA */
 .logo {
-  height: 48px;
+  height: 38px;
   width: auto;
   display: block;
 }
@@ -112,3 +112,4 @@ footer {
   color: #333;
   margin-top: 40px;
 }
+
