@@ -1,5 +1,5 @@
 /* ===============================
-   RESET BÁSICO
+   RESET
 ================================ */
 * {
   box-sizing: border-box;
@@ -8,51 +8,51 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5; /* cinza claro elegante */
+  background-color: #f5f5f5;
   color: #222;
 }
 
 /* ===============================
-   TOPO / HEADER
+   HEADER
 ================================ */
 .topo {
   background-color: #ffffff;
-  border-bottom: 4px solid #f2b705; /* amarelo Pavidez */
+  border-bottom: 4px solid #f2b705;
 }
 
 .topo-container {
   max-width: 1200px;
+  height: 80px;
   margin: auto;
-  padding: 15px 25px;
+  padding: 0 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO */
-.logo {
-  height: 55px;
-  width: auto;
-  display: block;
+/* LOGO CONTROLADA */
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box img {
+  height: 48px;          /* 🔥 tamanho correto */
+  max-width: 180px;     /* trava horizontal */
+  object-fit: contain;
 }
 
 /* ===============================
    MENU
 ================================ */
-.menu {
-  display: flex;
-  align-items: center;
-}
-
 .menu a {
   margin-left: 22px;
   text-decoration: none;
   color: #111;
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: all 0.2s ease-in-out;
 }
 
 .menu a:hover {
@@ -73,17 +73,15 @@ main {
 }
 
 h1 {
+  font-size: 28px;
   margin-top: 0;
-  margin-bottom: 20px;
-  color: #000;
 }
 
 h2 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 35px;
+  margin-bottom: 15px;
   padding-left: 14px;
   border-left: 6px solid #f2b705;
-  color: #000;
 }
 
 p {
@@ -91,32 +89,12 @@ p {
   font-size: 16px;
 }
 
-/* ===============================
-   LISTA DE TREINAMENTOS
-================================ */
-.lista-treinamentos {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+ul {
+  padding-left: 20px;
 }
 
-.lista-treinamentos li {
-  margin: 12px 0;
-  padding: 12px 16px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #f2b705;
-  border-radius: 4px;
-}
-
-.lista-treinamentos a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.lista-treinamentos a:hover {
-  color: #d35400; /* laranja compliance */
+li {
+  margin-bottom: 6px;
 }
 
 /* ===============================
@@ -130,28 +108,4 @@ footer {
   font-size: 14px;
   color: #333;
   margin-top: 40px;
-}
-
-/* ===============================
-   RESPONSIVO (CELULAR)
-================================ */
-@media (max-width: 768px) {
-  .topo-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .menu a {
-    margin: 8px 12px;
-  }
-
-  main {
-    margin: 20px;
-    padding: 25px;
-  }
 }
