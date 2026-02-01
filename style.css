@@ -1,6 +1,10 @@
 /* ===============================
    RESET BÁSICO
 ================================ */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -25,13 +29,21 @@ body {
   justify-content: space-between;
 }
 
+/* LOGO */
 .logo {
   height: 55px;
+  width: auto;
+  display: block;
 }
 
 /* ===============================
    MENU
 ================================ */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
 .menu a {
   margin-left: 22px;
   text-decoration: none;
@@ -40,6 +52,7 @@ body {
   font-size: 15px;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 
 .menu a:hover {
@@ -59,8 +72,14 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-h2 {
+h1 {
   margin-top: 0;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+h2 {
+  margin-top: 30px;
   margin-bottom: 20px;
   padding-left: 14px;
   border-left: 6px solid #f2b705;
@@ -111,4 +130,28 @@ footer {
   font-size: 14px;
   color: #333;
   margin-top: 40px;
+}
+
+/* ===============================
+   RESPONSIVO (CELULAR)
+================================ */
+@media (max-width: 768px) {
+  .topo-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu a {
+    margin: 8px 12px;
+  }
+
+  main {
+    margin: 20px;
+    padding: 25px;
+  }
 }
