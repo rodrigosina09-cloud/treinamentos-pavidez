@@ -1,6 +1,4 @@
-/* ===============================
-   RESET BÁSICO
-================================ */
+/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -12,9 +10,7 @@ body {
   color: #222;
 }
 
-/* ===============================
-   TOPO / HEADER
-================================ */
+/* HEADER */
 .topo {
   background-color: #ffffff;
   border-bottom: 4px solid #f2b705;
@@ -29,16 +25,14 @@ body {
   justify-content: space-between;
 }
 
-/* LOGO PEQUENA À ESQUERDA */
+/* LOGO PEQUENA, FIXA */
 .logo {
-  height: 40px;      /* tamanho correto */
+  height: 40px;
   width: auto;
   display: block;
 }
 
-/* ===============================
-   MENU
-================================ */
+/* MENU */
 .menu {
   display: flex;
   align-items: center;
@@ -59,9 +53,7 @@ body {
   border-bottom: 2px solid #f2b705;
 }
 
-/* ===============================
-   CONTEÚDO
-================================ */
+/* CONTEÚDO */
 main {
   max-width: 1200px;
   margin: 40px auto;
@@ -74,7 +66,6 @@ main {
 h1 {
   margin-top: 0;
   font-size: 28px;
-  color: #000;
 }
 
 h2 {
@@ -82,7 +73,6 @@ h2 {
   margin-bottom: 20px;
   padding-left: 14px;
   border-left: 6px solid #f2b705;
-  color: #000;
 }
 
 p {
@@ -90,20 +80,7 @@ p {
   font-size: 16px;
 }
 
-/* ===============================
-   LISTAS
-================================ */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin: 6px 0;
-}
-
-/* ===============================
-   RODAPÉ
-================================ */
+/* RODAPÉ */
 footer {
   background-color: #ffffff;
   border-top: 3px solid #f2b705;
