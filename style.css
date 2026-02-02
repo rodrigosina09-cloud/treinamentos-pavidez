@@ -18,17 +18,18 @@ body {
 
 .topo-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 24px;
+  margin: auto;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO PEQUENA, FIXA */
+/* LOGO — AGORA FUNCIONA */
 .logo {
-  height: 40px;
+  height: 40px;      /* tamanho correto */
   width: auto;
+  max-width: 160px;  /* trava contra exageros */
   display: block;
 }
 
@@ -39,54 +40,31 @@ body {
 }
 
 .menu a {
-  margin-left: 22px;
+  margin-left: 20px;
   text-decoration: none;
   color: #111;
   font-weight: 600;
   font-size: 14px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
 }
 
 .menu a:hover {
   color: #f2b705;
-  border-bottom: 2px solid #f2b705;
 }
 
 /* CONTEÚDO */
 main {
   max-width: 1200px;
   margin: 40px auto;
-  background-color: #ffffff;
+  background: #fff;
   padding: 40px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 28px;
-}
-
-h2 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding-left: 14px;
-  border-left: 6px solid #f2b705;
-}
-
-p {
-  line-height: 1.7;
-  font-size: 16px;
 }
 
 /* RODAPÉ */
 footer {
-  background-color: #ffffff;
-  border-top: 3px solid #f2b705;
   text-align: center;
   padding: 18px;
   font-size: 14px;
-  color: #333;
-  margin-top: 40px;
+  border-top: 3px solid #f2b705;
+  background: #fff;
 }
