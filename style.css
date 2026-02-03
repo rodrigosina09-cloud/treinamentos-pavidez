@@ -23,64 +23,71 @@ body {
 .topo-container {
   max-width: 1200px;
   margin: auto;
-  padding: 20px 24px 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* LOGO – SOB CONTROLE */
+/* LOGO */
 .logo {
-  height: 56px;          /* 🔒 trava definitiva */
+  height: 56px;
   width: auto;
   max-width: 220px;
   margin-bottom: 20px;
 }
 
-/* ================= MENU DE ACESSO ================= */
-.menu-acesso {
+/* ================= FAIXA DE ACESSO ================= */
+.faixa-acesso {
+  width: 100%;
+  background: #f2b705; /* cor de destaque */
+  padding: 24px;
   display: flex;
-  gap: 32px;
+  justify-content: center;
+  gap: 40px;
+  border-radius: 8px;
 }
 
-/* BOTÃO BASE */
-.menu-acesso a {
+/* CARD BASE */
+.card-acesso {
   text-decoration: none;
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 900;
   text-transform: uppercase;
-  padding: 14px 36px;
-  border-radius: 6px;
+  padding: 18px 48px;
+  border-radius: 8px;
   transition: all 0.2s ease;
+  text-align: center;
 }
 
 /* HOME */
-.btn-home {
+.card-acesso.home {
+  background: #ffffff;
   color: #111;
-  border: 2px solid #111;
-  background: #fff;
+  border: 3px solid #111;
 }
 
-.btn-home:hover {
+.card-acesso.home:hover {
   background: #111;
   color: #fff;
 }
 
-/* TREINAMENTOS – DESTAQUE */
-.btn-treinamentos {
-  background: #f2b705;
-  color: #111;
-  border: 2px solid #f2b705;
+/* TREINAMENTOS – PRINCIPAL */
+.card-acesso.treinamentos {
+  background: #111;
+  color: #f2b705;
+  border: 3px solid #111;
+  transform: scale(1.05); /* chama mais atenção */
 }
 
-.btn-treinamentos:hover {
-  background: #d9a404;
+.card-acesso.treinamentos:hover {
+  background: #000;
 }
 
 /* ================= CONTEÚDO ================= */
 main {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 48px auto;
   background: #fff;
   padding: 48px;
   border-radius: 6px;
@@ -95,7 +102,6 @@ main h1 {
 }
 
 main p {
-  font-size: 17px;
   margin-bottom: 32px;
 }
 
@@ -105,9 +111,9 @@ main h2 {
   margin-bottom: 16px;
   border-bottom: 2px solid #f2b705;
   display: inline-block;
-  padding-bottom: 4px;
 }
 
+/* LISTA */
 main ul {
   padding-left: 22px;
 }
