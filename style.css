@@ -16,20 +16,21 @@ body {
   border-bottom: 4px solid #f2b705;
 }
 
+/* AUMENTA A ALTURA DO TOPO (CAIXA VERMELHA) */
 .topo-container {
   max-width: 1200px;
   margin: auto;
-  padding: 10px 24px;
+  padding: 20px 24px; /* antes era 10px */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO — AGORA FUNCIONA */
+/* LOGO — MAIOR */
 .logo {
-  height: 40px;      /* tamanho correto */
+  height: 60px;      /* antes 40px */
   width: auto;
-  max-width: 160px;  /* trava contra exageros */
+  max-width: 220px;  /* antes 160px */
   display: block;
 }
 
@@ -39,12 +40,13 @@ body {
   align-items: center;
 }
 
+/* TEXTO DO MENU MAIOR */
 .menu a {
-  margin-left: 20px;
+  margin-left: 28px;
   text-decoration: none;
   color: #111;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 18px;   /* antes 14px */
 }
 
 .menu a:hover {
@@ -58,6 +60,15 @@ main {
   background: #fff;
   padding: 40px;
   border-radius: 6px;
+}
+
+/* TÍTULOS MAIS DESTACADOS */
+main h1 {
+  font-size: 32px;
+}
+
+main h2 {
+  font-size: 22px;
 }
 
 /* RODAPÉ */
