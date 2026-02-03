@@ -1,26 +1,20 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY (TEXTO BASE MAIOR)
-========================= */
+/* BODY */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f5f5f5;
   color: #222;
-  font-size: 18px;           /* ⬅ base maior */
+  font-size: 18px;
   line-height: 1.7;
 }
 
-/* =========================
-   HEADER / TOPO
-========================= */
+/* ================= TOPO ================= */
 .topo {
   background-color: #ffffff;
   border-bottom: 4px solid #f2b705;
@@ -30,12 +24,9 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-/* LOGO – NÃO MEXE */
+/* LOGO (JÁ OK – NÃO MEXE) */
 .logo {
   height: 48px;
   width: auto;
@@ -43,27 +34,7 @@ body {
   display: block;
 }
 
-/* MENU – TEXTO MAIOR */
-.menu {
-  display: flex;
-  align-items: center;
-}
-
-.menu a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 700;
-  font-size: 22px;          /* ⬅ menu maior */
-}
-
-.menu a:hover {
-  color: #f2b705;
-}
-
-/* =========================
-   CONTEÚDO
-========================= */
+/* ================= CONTEÚDO ================= */
 main {
   max-width: 1200px;
   margin: 40px auto;
@@ -72,25 +43,31 @@ main {
   border-radius: 6px;
 }
 
-/* TÍTULO PRINCIPAL */
+/* 🔴 TÍTULO PRINCIPAL (CIRCULADO) */
 main h1 {
-  font-size: 36px;          /* ⬅ maior */
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* TEXTO NORMAL (NÃO CENTRALIZA) */
+main p {
+  font-size: 18px;
   margin-bottom: 24px;
 }
 
-/* SUBTÍTULO */
+/* 🔴 SUBTÍTULO BASE LEGAL (CIRCULADO) */
 main h2 {
-  font-size: 26px;          /* ⬅ maior */
-  margin-top: 36px;
-  margin-bottom: 16px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 40px 0 20px 0;
 }
 
-/* PARÁGRAFOS E LISTAS */
-main p {
-  font-size: 19px;          /* ⬅ leitura confortável */
-  margin-bottom: 18px;
-}
-
+/* LISTA NORMAL */
 main ul {
   padding-left: 22px;
 }
@@ -100,13 +77,11 @@ main li {
   margin-bottom: 10px;
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+/* ================= RODAPÉ ================= */
 footer {
   text-align: center;
   padding: 22px;
-  font-size: 16px;          /* ⬅ rodapé maior */
+  font-size: 16px;
   border-top: 3px solid #f2b705;
   background: #fff;
 }
