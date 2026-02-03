@@ -1,18 +1,26 @@
-/* RESET FORÇADO */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY (TEXTO BASE MAIOR)
+========================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f5f5f5;
   color: #222;
+  font-size: 18px;           /* ⬅ base maior */
+  line-height: 1.7;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER / TOPO
+========================= */
 .topo {
   background-color: #ffffff;
   border-bottom: 4px solid #f2b705;
@@ -27,62 +35,78 @@ body {
   justify-content: space-between;
 }
 
-/* LOGO — TRAVADA NA MARRA */
+/* LOGO – NÃO MEXE */
 .logo {
-  height: 48px !important;
-  width: auto !important;
-  max-width: 180px !important;
+  height: 48px;
+  width: auto;
+  max-width: 180px;
   display: block;
 }
 
-/* MENU */
+/* MENU – TEXTO MAIOR */
 .menu {
   display: flex;
   align-items: center;
 }
 
 .menu a {
-  margin-left: 28px;
+  margin-left: 30px;
   text-decoration: none;
   color: #111;
   font-weight: 700;
-  font-size: 20px !important;
+  font-size: 22px;          /* ⬅ menu maior */
 }
 
 .menu a:hover {
   color: #f2b705;
 }
 
-/* ================= CONTEÚDO ================= */
+/* =========================
+   CONTEÚDO
+========================= */
 main {
   max-width: 1200px;
   margin: 40px auto;
   background: #fff;
-  padding: 40px;
+  padding: 48px;
   border-radius: 6px;
 }
 
+/* TÍTULO PRINCIPAL */
 main h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 36px;          /* ⬅ maior */
+  margin-bottom: 24px;
 }
 
+/* SUBTÍTULO */
 main h2 {
-  font-size: 22px;
-  margin-top: 30px;
+  font-size: 26px;          /* ⬅ maior */
+  margin-top: 36px;
+  margin-bottom: 16px;
 }
 
-main p,
+/* PARÁGRAFOS E LISTAS */
+main p {
+  font-size: 19px;          /* ⬅ leitura confortável */
+  margin-bottom: 18px;
+}
+
+main ul {
+  padding-left: 22px;
+}
+
 main li {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-/* ================= RODAPÉ ================= */
+/* =========================
+   RODAPÉ
+========================= */
 footer {
   text-align: center;
-  padding: 18px;
-  font-size: 14px;
+  padding: 22px;
+  font-size: 16px;          /* ⬅ rodapé maior */
   border-top: 3px solid #f2b705;
   background: #fff;
 }
