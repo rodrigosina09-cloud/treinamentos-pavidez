@@ -3,51 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <title>Plataforma de Treinamentos | Pavidez Engenharia</title>
-  <link rel="stylesheet" href="estilo.css?v=200">
 </head>
 
-<body>
+<body style="
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f5f5f5;
+  color:#222;
+">
 
-<header class="topo">
-  <div class="topo-container">
+<!-- TOPO -->
+<header style="
+  background:#fff;
+  border-bottom:4px solid #f2b705;
+  padding:24px;
+">
 
-    <!-- LOGO -->
-    <img
+  <!-- LOGO -->
+  <div style="text-align:center;">
+    <img 
       src="./imagem/logo-pavidez.png"
       alt="Pavidez Engenharia"
-      class="logo"
+      style="
+        height:60px;
+        width:auto;
+        max-width:260px;
+        margin-bottom:20px;
+      "
     >
+  </div>
 
-    <!-- FAIXA DE ACESSO -->
-    <div class="faixa-acesso">
-      <a href="index.html" class="card-acesso home">Home</a>
-      <a href="treinamentos.html" class="card-acesso treinamentos">
-        Treinamentos
-      </a>
-    </div>
+  <!-- FAIXA DE ACESSO (FOCO TOTAL) -->
+  <div style="
+    background:#f2b705;
+    padding:26px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    max-width:900px;
+    margin:0 auto;
+  ">
+
+    <!-- HOME -->
+    <a href="index.html"
+       style="
+         background:#fff;
+         color:#111;
+         font-size:26px;
+         font-weight:900;
+         text-transform:uppercase;
+         padding:20px 52px;
+         border-radius:8px;
+         text-decoration:none;
+         border:3px solid #111;
+       ">
+       Home
+    </a>
+
+    <!-- TREINAMENTOS (PRINCIPAL) -->
+    <a href="treinamentos.html"
+       style="
+         background:#111;
+         color:#f2b705;
+         font-size:30px;
+         font-weight:900;
+         text-transform:uppercase;
+         padding:20px 60px;
+         border-radius:8px;
+         text-decoration:none;
+         border:3px solid #111;
+       ">
+       Treinamentos
+    </a>
 
   </div>
 </header>
 
-<main>
-  <h1>Plataforma Corporativa de Treinamentos</h1>
+<!-- CONTEÚDO -->
+<main style="
+  background:#fff;
+  max-width:1200px;
+  margin:50px auto;
+  padding:48px;
+  border-radius:8px;
+">
 
-  <p>
+  <h1 style="
+    font-size:30px;
+    font-weight:700;
+    border-left:6px solid #f2b705;
+    padding-left:14px;
+    margin-bottom:24px;
+  ">
+    Plataforma Corporativa de Treinamentos
+  </h1>
+
+  <p style="
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:36px;
+  ">
     A Plataforma de Treinamentos da Pavidez Engenharia foi desenvolvida com o objetivo de
     centralizar, organizar e padronizar os treinamentos obrigatórios previstos nas
     Normas Regulamentadoras (NRs), promovendo conformidade legal e segurança operacional.
   </p>
 
-  <h2>Base Legal</h2>
+  <h2 style="
+    font-size:22px;
+    font-weight:700;
+    border-bottom:2px solid #f2b705;
+    display:inline-block;
+    padding-bottom:4px;
+    margin-bottom:16px;
+  ">
+    Base Legal
+  </h2>
 
-  <ul>
-    <li>CLT – Consolidação das Leis do Trabalho</li>
-    <li>Normas Regulamentadoras (NRs)</li>
-    <li>Gerenciamento de Riscos Ocupacionais (GRO)</li>
+  <ul style="
+    margin-top:16px;
+    padding-left:22px;
+    font-size:16px;
+  ">
+    <li style="margin-bottom:10px;">
+      CLT – Consolidação das Leis do Trabalho
+    </li>
+    <li style="margin-bottom:10px;">
+      Normas Regulamentadoras (NRs)
+    </li>
+    <li style="margin-bottom:10px;">
+      Gerenciamento de Riscos Ocupacionais (GRO)
+    </li>
   </ul>
+
 </main>
 
-<footer>
+<!-- RODAPÉ -->
+<footer style="
+  text-align:center;
+  padding:22px;
+  font-size:15px;
+  border-top:3px solid #f2b705;
+  background:#fff;
+">
   © Pavidez Engenharia – Plataforma de Treinamentos Corporativos
 </footer>
 
