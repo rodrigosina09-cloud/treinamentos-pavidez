@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -10,27 +12,28 @@ body {
   color: #222;
 }
 
-/* HEADER */
+/* =========================
+   HEADER / TOPO
+========================= */
 .topo {
   background-color: #ffffff;
   border-bottom: 4px solid #f2b705;
 }
 
-/* AUMENTA A ALTURA DO TOPO (CAIXA VERMELHA) */
 .topo-container {
   max-width: 1200px;
   margin: auto;
-  padding: 20px 24px; /* antes era 10px */
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO — MAIOR */
+/* LOGO – CONTROLADA */
 .logo {
-  height: 60px;      /* antes 40px */
+  height: 48px;
   width: auto;
-  max-width: 220px;  /* antes 160px */
+  max-width: 180px;
   display: block;
 }
 
@@ -40,20 +43,21 @@ body {
   align-items: center;
 }
 
-/* TEXTO DO MENU MAIOR */
 .menu a {
   margin-left: 28px;
   text-decoration: none;
   color: #111;
   font-weight: 700;
-  font-size: 18px;   /* antes 14px */
+  font-size: 20px;
 }
 
 .menu a:hover {
   color: #f2b705;
 }
 
-/* CONTEÚDO */
+/* =========================
+   CONTEÚDO
+========================= */
 main {
   max-width: 1200px;
   margin: 40px auto;
@@ -62,16 +66,25 @@ main {
   border-radius: 6px;
 }
 
-/* TÍTULOS MAIS DESTACADOS */
 main h1 {
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 main h2 {
   font-size: 22px;
+  margin-top: 30px;
 }
 
-/* RODAPÉ */
+main p,
+main li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
 footer {
   text-align: center;
   padding: 18px;
