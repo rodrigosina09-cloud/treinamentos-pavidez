@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Plataforma de Treinamentos | Pavidez Engenharia</title>
+  <title>Treinamentos | Pavidez Engenharia</title>
 </head>
 
 <body style="
@@ -18,72 +18,54 @@
   border-bottom:4px solid #f2b705;
 ">
 
-  <!-- LOGO -->
   <div style="
     max-width:1200px;
     margin:0 auto;
-    padding:28px 24px 18px;
+    padding:24px;
   ">
+
+    <!-- LOGO (FUNCIONANDO) -->
     <img
       src="./imagem/logo-pavidez.png"
       alt="Pavidez Engenharia"
       style="
-        height:72px;
+        height:64px;
         width:auto;
-        max-width:340px;
+        max-width:300px;
         display:block;
+        margin-bottom:10px;
       "
     >
-  </div>
 
-  <!-- FAIXA DE ACESSO -->
-  <div style="
-    background:#f2b705;
-    border-radius:10px;
-    margin:0 24px 20px;
-    padding:22px 24px;
-  ">
+    <!-- VOLTAR (NÃO DEPENDE DE CAMINHO) -->
+    <a href="javascript:history.back()"
+       style="
+         display:inline-flex;
+         align-items:center;
+         gap:8px;
+         text-decoration:none;
+         color:#111;
+         font-weight:700;
+         font-size:16px;
+         margin-bottom:18px;
+       ">
+      ← Voltar
+    </a>
+
+    <!-- APENAS ESTE TEXTO ABAIXO DA LOGO -->
     <div style="
-      max-width:1200px;
-      margin:0 auto;
-      display:flex;
-      justify-content:flex-start;
-      gap:28px;
+      font-size:22px;
+      font-weight:800;
+      text-transform:uppercase;
+      color:#111;
+      border-left:6px solid #f2b705;
+      padding-left:12px;
+      margin-top:6px;
     ">
-
-      <!-- HOME -->
-      <span style="
-        background:#ffffff;
-        color:#111;
-        font-size:24px;
-        font-weight:900;
-        text-transform:uppercase;
-        padding:16px 44px;
-        border-radius:8px;
-        border:3px solid #111;
-      ">
-        Home
-      </span>
-
-      <!-- TREINAMENTOS -->
-      <a href="treinamentos.html"
-         style="
-           background:#111;
-           color:#f2b705;
-           font-size:26px;
-           font-weight:900;
-           text-transform:uppercase;
-           padding:16px 56px;
-           border-radius:8px;
-           text-decoration:none;
-           border:3px solid #111;
-         ">
-         Treinamentos
-      </a>
-
+      Integração
     </div>
-  </div>
 
+  </div>
 </header>
 
 <!-- ================= CONTEÚDO ================= -->
@@ -95,23 +77,58 @@
   border-radius:8px;
 ">
 
-  <h1 style="
-    font-size:30px;
+  <h2 style="
+    font-size:24px;
     font-weight:700;
-    border-left:6px solid #f2b705;
-    padding-left:14px;
     margin-bottom:24px;
+    border-bottom:2px solid #f2b705;
+    display:inline-block;
+    padding-bottom:6px;
   ">
-    Plataforma Corporativa de Treinamentos
-  </h1>
+    Treinamentos Obrigatórios
+  </h2>
 
-  <p style="
+  <ul style="
+    margin-top:20px;
+    padding-left:22px;
     font-size:17px;
-    line-height:1.7;
   ">
-    Este portal centraliza os treinamentos obrigatórios da Pavidez Engenharia,
-    garantindo conformidade legal, organização e segurança operacional.
-  </p>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        Treinamento de Integração
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-01 – Disposições Gerais
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-06 – Equipamentos de Proteção Individual
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-11 – Movimentação e Armazenagem
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-12 – Máquinas e Equipamentos
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-18 – Construção Civil
+      </a>
+    </li>
+    <li style="margin-bottom:12px;">
+      <a href="#" style="text-decoration:none; color:#004aad;">
+        NR-26 – Sinalização de Segurança
+      </a>
+    </li>
+  </ul>
 
 </main>
 
