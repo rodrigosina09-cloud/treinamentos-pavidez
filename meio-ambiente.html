@@ -43,14 +43,18 @@
 
   <!-- FINALIZAR -->
   <button onclick="finalizar()"
-          style="background:#28a745;color:#fff;padding:12px 25px;border:none;font-weight:bold;">
+          style="background:#28a745;color:#fff;padding:12px 25px;border:none;font-weight:bold;cursor:pointer;">
     Finalizar Treinamento
   </button>
 
+  <!-- CERTIFICADO -->
   <div id="certificado" style="display:none;margin-top:40px;
        padding:20px;border:2px solid green;background:#eaffea;">
     <h2>✔ Treinamento Concluído</h2>
-    <button onclick="gerarCertificado()">Gerar Certificado</button>
+    <button onclick="gerarCertificado()"
+            style="background:#007bff;color:#fff;padding:10px 20px;border:none;cursor:pointer;">
+      Gerar Certificado
+    </button>
   </div>
 
 </main>
@@ -115,17 +119,34 @@ function gerarCertificado() {
       box-shadow:0 0 20px rgba(0,0,0,0.2);
     ">
 
-      <h1>CERTIFICADO</h1>
+      <h1 style="margin:10px 0;">CERTIFICADO</h1>
 
-      <p>Certificamos que</p>
+      <p style="font-size:18px;">Certificamos que</p>
 
-      <h2>${nome}</h2>
+      <h2 style="margin:20px 0;font-size:28px;">
+        ${nome}
+      </h2>
 
-      <p>concluiu o treinamento de</p>
+      <p style="font-size:18px;">
+        concluiu com êxito o treinamento de
+      </p>
 
-      <h3>Meio Ambiente e Sustentabilidade</h3>
+      <h3 style="margin:15px 0;font-size:22px;">
+        Meio Ambiente e Sustentabilidade
+      </h3>
 
-      <p>Data: ${data}</p>
+      <p style="margin-top:20px;">
+        com carga horária de 1 hora
+      </p>
+
+      <p style="margin-top:30px;">
+        Data: ${data}
+      </p>
+
+      <div style="margin-top:50px;">
+        _______________________________<br>
+        Responsável Técnico
+      </div>
 
     </div>
 
@@ -136,8 +157,9 @@ function gerarCertificado() {
   let novaJanela = window.open();
   novaJanela.document.write(conteudo);
   novaJanela.document.close();
+  novaJanela.focus();
 }
-  </script>
+</script>
 
 </body>
 </html>
