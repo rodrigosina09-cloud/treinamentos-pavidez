@@ -97,21 +97,62 @@ function gerarCertificado() {
   let nome = document.getElementById("nome").value;
   let data = new Date().toLocaleDateString();
 
-  let texto = `
-  CERTIFICADO
+  let win = window.open('', '', 'width=900,height=650');
 
-  Certificamos que ${nome}
-  concluiu o treinamento de
-  Meio Ambiente e Sustentabilidade
+  win.document.write(`
+  <html>
+  <head>
+    <title>Certificado</title>
+  </head>
 
-  Data: ${data}
-  Pavidez Engenharia
-  `;
+  <body style="margin:0;font-family:Arial;background:#f4f4f4;">
 
-  let win = window.open('', '', 'width=600,height=400');
-  win.document.write("<pre style='text-align:center;font-size:18px;'>" + texto + "</pre>");
+    <div style="
+      width:800px;
+      margin:30px auto;
+      padding:40px;
+      background:#fff;
+      border:8px solid #f2b705;
+      text-align:center;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+    ">
+
+      <img src="imagem/logo-pavidez.png" style="height:80px;margin-bottom:20px;">
+
+      <h1 style="margin:10px 0;">CERTIFICADO</h1>
+
+      <p style="font-size:18px;">Certificamos que</p>
+
+      <h2 style="margin:20px 0;font-size:28px;">
+        ${nome}
+      </h2>
+
+      <p style="font-size:18px;">
+        concluiu com êxito o treinamento de
+      </p>
+
+      <h3 style="margin:15px 0;font-size:22px;">
+        Meio Ambiente e Sustentabilidade
+      </h3>
+
+      <p style="margin-top:20px;">
+        com carga horária de 1 hora
+      </p>
+
+      <p style="margin-top:30px;">
+        Data: ${data}
+      </p>
+
+      <div style="margin-top:50px;">
+        _______________________________<br>
+        Responsável Técnico
+      </div>
+
+    </div>
+
+  </body>
+  </html>
+  `);
+
+  win.document.close();
 }
-</script>
-
-</body>
-</html>
