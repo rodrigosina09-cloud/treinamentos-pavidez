@@ -92,15 +92,12 @@ function finalizar() {
   document.getElementById("certificado").style.display = "block";
 }
 
-  
 function gerarCertificado() {
 
   let nome = document.getElementById("nome").value;
   let data = new Date().toLocaleDateString();
 
-  let win = window.open('', '', 'width=900,height=650');
-
-  win.document.write(`
+  let conteudo = `
   <html>
   <head>
     <title>Certificado</title>
@@ -118,42 +115,25 @@ function gerarCertificado() {
       box-shadow:0 0 20px rgba(0,0,0,0.2);
     ">
 
-      <img src="imagem/logo-pavidez.png" style="height:80px;margin-bottom:20px;">
+      <h1>CERTIFICADO</h1>
 
-      <h1 style="margin:10px 0;">CERTIFICADO</h1>
+      <p>Certificamos que</p>
 
-      <p style="font-size:18px;">Certificamos que</p>
+      <h2>${nome}</h2>
 
-      <h2 style="margin:20px 0;font-size:28px;">
-        ${nome}
-      </h2>
+      <p>concluiu o treinamento de</p>
 
-      <p style="font-size:18px;">
-        concluiu com êxito o treinamento de
-      </p>
+      <h3>Meio Ambiente e Sustentabilidade</h3>
 
-      <h3 style="margin:15px 0;font-size:22px;">
-        Meio Ambiente e Sustentabilidade
-      </h3>
-
-      <p style="margin-top:20px;">
-        com carga horária de 1 hora
-      </p>
-
-      <p style="margin-top:30px;">
-        Data: ${data}
-      </p>
-
-      <div style="margin-top:50px;">
-        _______________________________<br>
-        Responsável Técnico
-      </div>
+      <p>Data: ${data}</p>
 
     </div>
 
   </body>
   </html>
-  `);
+  `;
 
-  win.document.close();
+  let novaJanela = window.open();
+  novaJanela.document.write(conteudo);
+  novaJanela.document.close();
 }
