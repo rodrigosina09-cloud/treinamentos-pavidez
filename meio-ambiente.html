@@ -31,7 +31,7 @@ header {
   border-radius: 10px;
 }
 
-/* INPUTS CORRETOS */
+/* INPUTS */
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -45,7 +45,7 @@ input[type="radio"] {
   margin-right: 8px;
 }
 
-/* PERGUNTAS ORGANIZADAS */
+/* PERGUNTAS */
 .pergunta {
   margin-bottom: 20px;
   padding: 15px;
@@ -65,6 +65,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
+/* BOTÃO */
 button {
   background: #27ae60;
   color: white;
@@ -128,16 +129,18 @@ button:hover {
 </ul>
 </div>
 
-<!-- VIDEO --> 
+<!-- VIDEO -->
 <div class="card">
 <h2>🎥 Vídeo de Apoio</h2>
 
-<button onclick="abrirVideo()">▶ Assistir Vídeo</button>
+<button onclick="abrirVideo(this)">▶ Assistir Vídeo</button>
 
 <div id="videoContainer" style="display:none; margin-top:20px;">
   <iframe width="100%" height="400"
-  src="https://www.youtube.com/embed/2n4p8R7s0fQ"
-  allowfullscreen>
+    src="https://www.youtube.com/embed/2n4p8R7s0fQ"
+    title="Treinamento Meio Ambiente"
+    frameborder="0"
+    allowfullscreen>
   </iframe>
 </div>
 
@@ -186,6 +189,11 @@ button:hover {
 </div>
 
 <script>
+function abrirVideo(botao) {
+  document.getElementById("videoContainer").style.display = "block";
+  botao.style.display = "none";
+}
+
 function corrigir() {
 
 let nome = document.getElementById("nome").value;
