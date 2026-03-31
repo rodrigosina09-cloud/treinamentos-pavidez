@@ -31,10 +31,38 @@ header {
   border-radius: 10px;
 }
 
-input {
+/* INPUTS CORRETOS */
+input[type="text"] {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* PERGUNTAS ORGANIZADAS */
+.pergunta {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.pergunta p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pergunta label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
 
 button {
@@ -44,6 +72,10 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+button:hover {
+  background: #219150;
 }
 
 .resultado {
@@ -103,7 +135,6 @@ button {
 </div>
 
 <!-- AVALIAÇÃO -->
-  
 <div class="card">
 <h2>📝 Avaliação</h2>
 
