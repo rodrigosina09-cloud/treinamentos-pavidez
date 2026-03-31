@@ -1,156 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Treinamento - Meio Ambiente</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<title>Treinamento - Meio Ambiente</title>
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+<style>
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+  margin: 0;
+}
 
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
 
-    h2 {
-      color: #2c3e50;
-      border-left: 5px solid #27ae60;
-      padding-left: 10px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
 
-    ul {
-      line-height: 1.6;
-    }
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-    .video {
-      text-align: center;
-      margin-top: 20px;
-    }
+button {
+  background: #27ae60;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-    iframe {
-      width: 100%;
-      max-width: 700px;
-      height: 400px;
-      border-radius: 10px;
-    }
+button:hover {
+  background: #219150;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #27ae60;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    .btn:hover {
-      background: #219150;
-    }
-  </style>
+.resultado {
+  font-weight: bold;
+  margin-top: 20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Treinamento de Meio Ambiente em Obras</h1>
-  <p>Conscientização e Boas Práticas no Canteiro</p>
+<h1>Treinamento de Meio Ambiente</h1>
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>🎯 Objetivo</h2>
-    <p>Capacitar os colaboradores para reduzir impactos ambientais e atuar conforme boas práticas na obra.</p>
-  </div>
+<div class="card">
+<h2>👤 Identificação</h2>
 
-  <div class="card">
-    <h2>🌱 O que é Meio Ambiente?</h2>
-    <p>É tudo que nos cerca: ar, água, solo, fauna e flora. A obra também faz parte desse ambiente.</p>
-  </div>
+<label>Nome:</label>
+<input type="text" id="nome">
 
-  <div class="card">
-    <h2>⚠️ Impactos Ambientais</h2>
-    <ul>
-      <li>Poluição do solo</li>
-      <li>Poluição da água</li>
-      <li>Poeira e poluição do ar</li>
-      <li>Desperdício de materiais</li>
-    </ul>
-  </div>
+<label>Função:</label>
+<input type="text" id="funcao">
 
-  <div class="card">
-    <h2>♻️ Gestão de Resíduos</h2>
-    <ul>
-      <li>Classe A: Entulho</li>
-      <li>Classe B: Recicláveis</li>
-      <li>Classe C: Sem reciclagem</li>
-      <li>Classe D: Perigosos</li>
-    </ul>
-  </div>
+<label>CPF:</label>
+<input type="text" id="cpf">
+</div>
 
-  <div class="card">
-    <h2>🚱 Uso Consciente</h2>
-    <ul>
-      <li>Evitar desperdício de água</li>
-      <li>Fechar torneiras</li>
-      <li>Evitar retrabalho</li>
-    </ul>
-  </div>
+<div class="card">
+<h2>📝 Avaliação</h2>
 
-  <div class="card">
-    <h2>🛢️ Produtos Perigosos</h2>
-    <p>Óleos, tintas e solventes devem ser armazenados corretamente e nunca descartados no solo.</p>
-  </div>
+<p>1. O que fazer com resíduos perigosos?</p>
+<input type="radio" name="q1" value="errado"> Jogar no lixo comum<br>
+<input type="radio" name="q1" value="certo"> Destinar corretamente<br>
 
-  <div class="card">
-    <h2>🚧 Boas Práticas</h2>
-    <ul>
-      <li>Manter organização</li>
-      <li>Descartar corretamente</li>
-      <li>Evitar vazamentos</li>
-    </ul>
-  </div>
+<p>2. Pode jogar óleo no solo?</p>
+<input type="radio" name="q2" value="certo"> Não<br>
+<input type="radio" name="q2" value="errado"> Sim<br>
 
-  <div class="card">
-    <h2>🎥 Vídeo de Apoio</h2>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/8Zs7yFh9Y6A" allowfullscreen></iframe>
-    </div>
-  </div>
+<p>3. Por que separar resíduos?</p>
+<input type="radio" name="q3" value="certo"> Para reciclagem e organização<br>
+<input type="radio" name="q3" value="errado"> Não precisa<br>
 
-  <div class="card">
-    <h2>📝 Avaliação</h2>
-    <ul>
-      <li>O que fazer com resíduos perigosos?</li>
-      <li>Por que separar o lixo?</li>
-      <li>O que fazer em caso de vazamento?</li>
-    </ul>
-  </div>
+<p>4. O que fazer em caso de vazamento?</p>
+<input type="radio" name="q4" value="certo"> Comunicar imediatamente<br>
+<input type="radio" name="q4" value="errado"> Ignorar<br>
 
-  <a href="#" class="btn">Finalizar Treinamento</a>
+<button onclick="corrigir()">Finalizar Avaliação</button>
+
+<p class="resultado" id="resultado"></p>
+</div>
 
 </div>
+
+<script>
+function corrigir() {
+  let nome = document.getElementById("nome").value;
+  let funcao = document.getElementById("funcao").value;
+  let cpf = document.getElementById("cpf").value;
+
+  if(nome === "" || funcao === "" || cpf === "") {
+    alert("Preencha todos os dados!");
+    return;
+  }
+
+  let respostas = document.querySelectorAll('input[type="radio"]:checked');
+  
+  if(respostas.length < 4) {
+    alert("Responda todas as perguntas!");
+    return;
+  }
+
+  let pontos = 0;
+
+  respostas.forEach(r => {
+    if(r.value === "certo") pontos++;
+  });
+
+  let resultado = document.getElementById("resultado");
+
+  if(pontos >= 3) {
+    resultado.innerHTML = `✅ APROVADO (${pontos}/4) <br> ${nome}`;
+    resultado.style.color = "green";
+  } else {
+    resultado.innerHTML = `❌ REPROVADO (${pontos}/4) <br> ${nome}`;
+    resultado.style.color = "red";
+  }
+}
+</script>
 
 </body>
 </html>
