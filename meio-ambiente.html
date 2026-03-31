@@ -113,23 +113,30 @@ button {
 
 <h3>Perguntas</h3>
 
-<p>1. O que fazer com resíduos perigosos?</p>
-<input type="radio" name="q1" value="errado"> Jogar no lixo comum<br>
-<input type="radio" name="q1" value="certo"> Destinar corretamente<br>
+<div class="pergunta">
+  <p>1. O que fazer com resíduos perigosos?</p>
+  <label><input type="radio" name="q1" value="errado"> Jogar no lixo comum</label>
+  <label><input type="radio" name="q1" value="certo"> Destinar corretamente</label>
+</div>
 
-<p>2. Pode jogar óleo no solo?</p>
-<input type="radio" name="q2" value="certo"> Não<br>
-<input type="radio" name="q2" value="errado"> Sim<br>
+<div class="pergunta">
+  <p>2. Pode jogar óleo no solo?</p>
+  <label><input type="radio" name="q2" value="certo"> Não</label>
+  <label><input type="radio" name="q2" value="errado"> Sim</label>
+</div>
 
-<p>3. Por que separar resíduos?</p>
-<input type="radio" name="q3" value="certo"> Para reciclagem<br>
-<input type="radio" name="q3" value="errado"> Não precisa<br>
+<div class="pergunta">
+  <p>3. Por que separar resíduos?</p>
+  <label><input type="radio" name="q3" value="certo"> Para reciclagem</label>
+  <label><input type="radio" name="q3" value="errado"> Não precisa</label>
+</div>
 
-<p>4. O que fazer em caso de vazamento?</p>
-<input type="radio" name="q4" value="certo"> Comunicar imediatamente<br>
-<input type="radio" name="q4" value="errado"> Ignorar<br>
+<div class="pergunta">
+  <p>4. O que fazer em caso de vazamento?</p>
+  <label><input type="radio" name="q4" value="certo"> Comunicar imediatamente</label>
+  <label><input type="radio" name="q4" value="errado"> Ignorar</label>
+</div>
 
-<br>
 <button onclick="corrigir()">Finalizar Avaliação</button>
 
 <p id="resultado" class="resultado"></p>
