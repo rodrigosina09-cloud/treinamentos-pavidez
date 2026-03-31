@@ -102,7 +102,7 @@ function gerarCertificado() {
   let nome = document.getElementById("nome").value;
   let data = new Date().toLocaleDateString();
 
-  let win = window.open('', '', 'width=1000,height=700');
+  let win = window.open('', '', 'width=1100,height=800');
 
   win.document.write(`
   <html>
@@ -110,98 +110,113 @@ function gerarCertificado() {
     <title>Certificado</title>
   </head>
 
-  <body style="margin:0;font-family:Georgia,serif;background:#ccc;">
+  <body style="margin:0;background:#dcdcdc;font-family:'Times New Roman', serif;">
 
     <div style="
-      width:900px;
+      width:1000px;
       margin:30px auto;
-      padding:40px;
-      background:#fff;
-      border:10px solid #999;
-      box-shadow:0 0 20px rgba(0,0,0,0.3);
-      position:relative;
+      padding:20px;
+      background:#e5e5e5;
+      border:6px solid #777;
     ">
 
-      <!-- LOGO -->
-      <div style="text-align:center;">
-        <img src="imagem/logo-pavidez.png" style="height:70px;">
-      </div>
-
-      <!-- TÍTULO -->
-      <h1 style="
-        text-align:center;
-        font-size:32px;
-        margin-top:20px;
-        letter-spacing:2px;
-      ">
-        CERTIFICADO DE PARTICIPAÇÃO
-      </h1>
-
-      <p style="text-align:center;margin-top:30px;font-size:18px;">
-        Certificamos que
-      </p>
-
-      <!-- NOME -->
-      <h2 style="
-        text-align:center;
-        font-size:28px;
-        margin:20px 0;
-        text-transform:uppercase;
-        font-weight:bold;
-      ">
-        ${nome}
-      </h2>
-
-      <p style="text-align:center;font-size:16px;">
-        participou do treinamento de
-      </p>
-
-      <!-- TREINAMENTO -->
-      <h3 style="
-        text-align:center;
-        font-size:20px;
-        margin-top:10px;
-      ">
-        MEIO AMBIENTE E SUSTENTABILIDADE
-      </h3>
-
-      <p style="
-        text-align:center;
-        margin-top:20px;
-        font-size:15px;
-        line-height:1.6;
-      ">
-        realizado pela Pavidez Engenharia, com carga horária de 1 (uma) hora,
-        abordando práticas ambientais, gestão de resíduos e prevenção de impactos
-        no ambiente de trabalho.
-      </p>
-
-      <!-- DATA -->
-      <p style="text-align:center;margin-top:30px;">
-        Londrina - PR, ${data}
-      </p>
-
-      <!-- ASSINATURAS -->
       <div style="
-        display:flex;
-        justify-content:space-between;
-        margin-top:60px;
+        border:2px solid #777;
+        padding:40px;
+        background:#f9f9f9;
+        text-align:center;
       ">
 
-        <div style="text-align:center;">
-          ___________________________<br>
-          Responsável Técnico
-        </div>
+        <!-- LOGO -->
+        <img src="https://rodrigosina09-cloud.github.io/treinamentos-pavidez/imagem/logo-pavidez.png"
+             style="height:60px;margin-bottom:10px;">
 
-        <div style="text-align:center;">
-          ___________________________<br>
-          Colaborador
+        <!-- TÍTULO -->
+        <h1 style="
+          font-size:34px;
+          margin:20px 0;
+          letter-spacing:2px;
+          color:#444;
+        ">
+          CERTIFICADO DE PARTICIPAÇÃO
+        </h1>
+
+        <p style="font-size:14px;color:#555;">
+          CERTIFICAMOS QUE
+        </p>
+
+        <!-- NOME -->
+        <h2 style="
+          font-size:26px;
+          margin:15px 0;
+          font-weight:bold;
+          color:#333;
+        ">
+          ${nome.toUpperCase()}
+        </h2>
+
+        <p style="font-size:13px;color:#555;">
+          PARTICIPOU DO TREINAMENTO DE:
+        </p>
+
+        <!-- TREINAMENTO -->
+        <h3 style="
+          font-size:18px;
+          margin:15px 0;
+          font-weight:bold;
+          color:#222;
+        ">
+          MEIO AMBIENTE E SUSTENTABILIDADE
+        </h3>
+
+        <p style="
+          font-size:13px;
+          line-height:1.6;
+          color:#444;
+          margin-top:20px;
+        ">
+          realizado pela Pavidez Engenharia, com carga horária de 1 (uma) hora,
+          abordando práticas ambientais, gestão de resíduos e prevenção de impactos ambientais.
+        </p>
+
+        <p style="margin-top:20px;font-size:13px;">
+          Realizado em ${data}
+        </p>
+
+        <p style="font-size:13px;">
+          Local do treinamento: Londrina - PR
+        </p>
+
+        <!-- ASSINATURAS -->
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          margin-top:60px;
+        ">
+
+          <div style="text-align:center;">
+            ___________________________<br>
+            Instrutor
+          </div>
+
+          <div style="text-align:center;">
+            ___________________________<br>
+            Participante
+          </div>
+
         </div>
 
       </div>
-
     </div>
 
+  </body>
+  </html>
+  `);
+
+  win.document.close();
+  win.focus();
+}
+</script>
   </body>
   </html>
   `);
