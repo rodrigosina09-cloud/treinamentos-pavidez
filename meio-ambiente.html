@@ -31,6 +31,12 @@ header {
   border-radius: 10px;
 }
 
+h2 {
+  border-left: 5px solid #27ae60;
+  padding-left: 10px;
+}
+
+/* INPUTS */
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -43,11 +49,16 @@ input[type="radio"] {
   margin-right: 8px;
 }
 
+/* PERGUNTAS */
 .pergunta {
   margin-bottom: 20px;
   padding: 15px;
   background: #f9fafb;
   border-radius: 8px;
+}
+
+.pergunta p {
+  font-weight: bold;
 }
 
 .pergunta label {
@@ -56,6 +67,7 @@ input[type="radio"] {
   margin-bottom: 8px;
 }
 
+/* BOTÃO */
 button {
   background: #27ae60;
   color: white;
@@ -63,6 +75,10 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+button:hover {
+  background: #219150;
 }
 
 .resultado {
@@ -82,8 +98,38 @@ button {
 
 <!-- CONTEÚDO -->
 <div class="card">
-<h2>🌱 Conteúdo</h2>
-<p>Treinamento sobre impactos ambientais, resíduos e boas práticas na obra.</p>
+<h2>🌱 O que é Meio Ambiente?</h2>
+<p>O meio ambiente é tudo que nos cerca: ar, água, solo, fauna e flora. Toda atividade de obra gera impacto e por isso devemos atuar de forma responsável.</p>
+</div>
+
+<div class="card">
+<h2>⚠️ Impactos Ambientais em Obras</h2>
+<ul>
+<li>Poluição do solo por resíduos</li>
+<li>Contaminação da água</li>
+<li>Geração de poeira</li>
+<li>Desperdício de materiais</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>♻️ Gestão de Resíduos</h2>
+<ul>
+<li><b>Classe A:</b> Entulho</li>
+<li><b>Classe B:</b> Recicláveis</li>
+<li><b>Classe C:</b> Sem reaproveitamento</li>
+<li><b>Classe D:</b> Perigosos</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🚧 Boas Práticas</h2>
+<ul>
+<li>Manter organização do canteiro</li>
+<li>Evitar desperdícios</li>
+<li>Descartar corretamente resíduos</li>
+<li>Comunicar vazamentos</li>
+</ul>
 </div>
 
 <!-- VIDEO -->
@@ -93,14 +139,12 @@ button {
 <button onclick="abrirVideo(this)">▶ Assistir Vídeo</button>
 
 <div id="videoContainer" style="display:none; margin-top:20px;">
-  <iframe width="100%" height="400"
-    src="https://www.youtube.com/embed/2n4p8R7s0fQ"
-    allowfullscreen>
-  </iframe>
+<iframe width="100%" height="400"
+src="https://www.youtube.com/embed/2n4p8R7s0fQ"
+allowfullscreen></iframe>
 </div>
 
 <p id="statusVideo" style="color:red;">⚠ Assista o vídeo para liberar a avaliação</p>
-
 </div>
 
 <!-- AVALIAÇÃO -->
@@ -130,7 +174,25 @@ Declaro que eu mesmo realizei este treinamento.
 <label><input type="radio" name="q2" value="errado"> Sim</label>
 </div>
 
-<button onclick="corrigir()">Finalizar</button>
+<div class="pergunta">
+<p>3. Separar resíduos serve para:</p>
+<label><input type="radio" name="q3" value="certo"> Reciclagem e organização</label>
+<label><input type="radio" name="q3" value="errado"> Não tem utilidade</label>
+</div>
+
+<div class="pergunta">
+<p>4. Vazamento deve ser:</p>
+<label><input type="radio" name="q4" value="certo"> Comunicado imediatamente</label>
+<label><input type="radio" name="q4" value="errado"> Ignorado</label>
+</div>
+
+<div class="pergunta">
+<p>5. O uso consciente de água significa:</p>
+<label><input type="radio" name="q5" value="certo"> Evitar desperdício</label>
+<label><input type="radio" name="q5" value="errado"> Usar sem controle</label>
+</div>
+
+<button onclick="corrigir()">Finalizar Avaliação</button>
 
 <p id="resultado" class="resultado"></p>
 </div>
@@ -139,9 +201,9 @@ Declaro que eu mesmo realizei este treinamento.
 
 <script>
 let videoAssistido = false;
-let inicioTreinamento = new Date();
+let inicio = new Date();
 
-function abrirVideo(botao) {
+function abrirVideo(botao){
   document.getElementById("videoContainer").style.display = "block";
   botao.style.display = "none";
 
@@ -149,29 +211,29 @@ function abrirVideo(botao) {
     videoAssistido = true;
     document.getElementById("statusVideo").innerHTML = "✅ Vídeo liberado";
     document.getElementById("statusVideo").style.color = "green";
-  }, 15000); // 15 segundos mínimo
+  }, 10000);
 }
 
-function corrigir() {
+function corrigir(){
 
 let nome = document.getElementById("nome").value;
 let funcao = document.getElementById("funcao").value;
 let cpf = document.getElementById("cpf").value;
 let declaracao = document.getElementById("declaracao").checked;
 
-let tempo = (new Date() - inicioTreinamento) / 1000;
+let tempo = (new Date() - inicio)/1000;
 
 if(!videoAssistido){
   alert("Assista o vídeo primeiro!");
   return;
 }
 
-if(tempo < 30){
-  alert("Tempo mínimo de treinamento não atingido!");
+if(tempo < 20){
+  alert("Tempo mínimo não atingido!");
   return;
 }
 
-if(nome === "" || funcao === "" || cpf === ""){
+if(nome==="" || funcao==="" || cpf===""){
   alert("Preencha todos os dados!");
   return;
 }
@@ -183,35 +245,31 @@ if(!declaracao){
 
 let respostas = document.querySelectorAll('input[type="radio"]:checked');
 
-if(respostas.length < 2){
+if(respostas.length < 5){
   alert("Responda todas as perguntas!");
   return;
 }
 
 let pontos = 0;
-
-respostas.forEach(r => {
-  if(r.value === "certo") pontos++;
-});
+respostas.forEach(r => { if(r.value==="certo") pontos++; });
 
 let data = new Date().toLocaleString();
 
 let resultado = document.getElementById("resultado");
 
-if(pontos >= 2){
-  resultado.innerHTML = `
-  ✅ APROVADO <br>
-  Nome: ${nome} <br>
-  CPF: ${cpf} <br>
-  Função: ${funcao} <br>
-  Data: ${data}
-  `;
-  resultado.style.color = "green";
+if(pontos >= 4){
+resultado.innerHTML = `
+✅ APROVADO <br>
+Nome: ${nome} <br>
+CPF: ${cpf} <br>
+Função: ${funcao} <br>
+Data: ${data}
+`;
+resultado.style.color = "green";
 }else{
-  resultado.innerHTML = `❌ REPROVADO (${pontos})`;
-  resultado.style.color = "red";
+resultado.innerHTML = `❌ REPROVADO (${pontos}/5)`;
+resultado.style.color = "red";
 }
-
 }
 </script>
 
