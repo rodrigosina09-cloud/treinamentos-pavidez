@@ -92,12 +92,14 @@ function finalizar() {
   document.getElementById("certificado").style.display = "block";
 }
 
+  
+<script>
 function gerarCertificado() {
 
   let nome = document.getElementById("nome").value;
   let data = new Date().toLocaleDateString();
 
-  let win = window.open('', '', 'width=1100,height=800');
+  let win = window.open('', '', 'width=1200,height=800');
 
   win.document.write(`
   <html>
@@ -105,49 +107,105 @@ function gerarCertificado() {
     <title>Certificado</title>
   </head>
 
-  <body style="margin:0;background:#dcdcdc;font-family:'Times New Roman', serif;">
+  <body style="margin:0;background:#cfcfcf;font-family:Georgia,serif;">
 
     <div style="
-      width:1000px;
-      margin:30px auto;
-      padding:20px;
-      background:#e5e5e5;
+      width:1100px;
+      margin:20px auto;
+      padding:15px;
+      background:#d9d9d9;
       border:6px solid #777;
     ">
 
       <div style="
         border:2px solid #777;
-        padding:40px;
-        background:#f9f9f9;
+        padding:50px;
+        background:#efefef;
         text-align:center;
       ">
 
+        <!-- LOGO -->
         <img src="https://rodrigosina09-cloud.github.io/treinamentos-pavidez/imagem/logo-pavidez.png"
-             style="height:60px;margin-bottom:10px;">
+             style="height:70px;margin-bottom:10px;">
 
-        <h1 style="font-size:34px;margin:20px 0;letter-spacing:2px;color:#444;">
+        <!-- TÍTULO -->
+        <h1 style="
+          font-size:38px;
+          letter-spacing:2px;
+          margin:20px 0;
+          color:#555;
+        ">
           CERTIFICADO DE PARTICIPAÇÃO
         </h1>
 
-        <p style="font-size:14px;">CERTIFICAMOS QUE</p>
+        <p style="font-size:14px;color:#666;">
+          CERTIFICAMOS QUE
+        </p>
 
-        <h2 style="font-size:26px;margin:15px 0;">
+        <!-- NOME DINÂMICO -->
+        <h2 style="
+          font-size:28px;
+          margin:20px 0;
+          font-weight:bold;
+          color:#333;
+        ">
           ${nome.toUpperCase()}
         </h2>
 
-        <p>PARTICIPOU DO TREINAMENTO DE:</p>
+        <p style="font-size:13px;color:#555;">
+          FUNÇÃO
+        </p>
 
-        <h3>MEIO AMBIENTE E SUSTENTABILIDADE</h3>
+        <h3 style="font-size:16px;margin:10px 0;">
+          COLABORADOR
+        </h3>
 
-        <p style="margin-top:20px;">
+        <p style="margin-top:20px;font-size:13px;">
+          PARTICIPOU DO TREINAMENTO INICIAL DE:
+        </p>
+
+        <h3 style="
+          font-size:18px;
+          margin:10px 0;
+          font-weight:bold;
+        ">
+          MEIO AMBIENTE E SUSTENTABILIDADE
+        </h3>
+
+        <p style="
+          font-size:13px;
+          margin-top:20px;
+          line-height:1.6;
+        ">
+          em conformidade com as diretrizes internas da empresa PAVIDEZ ENGENHARIA LTDA.<br>
+          Ministrado pelo setor responsável, perfazendo carga horária total de 1 (uma) hora.
+        </p>
+
+        <p style="margin-top:20px;font-size:13px;">
           Realizado em ${data}
         </p>
 
-        <p>Local: Londrina - PR</p>
+        <p style="font-size:13px;">
+          Local do treinamento: Londrina - PR
+        </p>
 
-        <div style="display:flex;justify-content:space-between;margin-top:60px;">
-          <div>___________________________<br>Instrutor</div>
-          <div>___________________________<br>Participante</div>
+        <!-- ASSINATURAS -->
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          margin-top:80px;
+        ">
+
+          <div style="text-align:center;">
+            _______________________________<br>
+            Instrutor
+          </div>
+
+          <div style="text-align:center;">
+            _______________________________<br>
+            Participante
+          </div>
+
         </div>
 
       </div>
@@ -160,7 +218,6 @@ function gerarCertificado() {
   win.document.close();
   win.focus();
 }
-
 </script>
 
 </body>
