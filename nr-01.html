@@ -85,21 +85,20 @@ Normas Regulamentadoras.
 
 <h2>🎥 Vídeo Obrigatório</h2>
 
-<video id="videoTreinamento"
+<iframe
+id="videoTreinamento"
 width="100%"
-controls>
-
-<source src="videos/nr01.mp4"
-type="video/mp4">
-
-Seu navegador não suporta vídeo.
-
-</video>
+height="500"
+src="https://www.youtube.com/embed/UXl5SZ_spus"
+title="NR-01"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
 <p id="statusVideo"
 style="color:red;font-weight:bold;">
 
-⚠️ Assista o vídeo completo para liberar a avaliação.
+⚠️ Assista o vídeo antes de realizar a avaliação.
 
 </p>
 
@@ -258,20 +257,7 @@ style="font-weight:bold;font-size:20px;"></p>
 
 <script>
 
-let videoAssistido = false;
-
-document.getElementById("videoTreinamento")
-.addEventListener("ended", function(){
-
-videoAssistido = true;
-
-document.getElementById("statusVideo").innerHTML =
-"✅ Vídeo concluído";
-
-document.getElementById("statusVideo").style.color =
-"green";
-
-});
+let videoAssistido = true;
 
 function corrigir(){
 
