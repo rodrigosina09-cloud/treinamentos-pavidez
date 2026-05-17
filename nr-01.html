@@ -5,46 +5,59 @@
   <title>NR-01 – Disposições Gerais | Pavidez Engenharia</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
 <header class="topo">
   <div class="topo-container">
-    <img src="imagem/logo-pavidez.png" alt="Pavidez Engenharia" style="height:55px;">
-    
+
+    <img src="imagem/logo-pavidez.png"
+    alt="Pavidez Engenharia"
+    style="height:55px;">
 
     <nav class="menu">
-  <a href="index.html">Home</a>
-  <a href="treinamentos.html">Treinamentos</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="treinamentos.html">Treinamentos</a>
+    </nav>
 
-    
   </div>
 </header>
 
 <main>
 
+  <!-- INTRODUÇÃO -->
   <section>
+
     <h2>NR-01 – Disposições Gerais</h2>
+
     <p>
       A Norma Regulamentadora nº 01 estabelece as disposições gerais relativas
       à segurança e saúde no trabalho, definindo diretrizes para o
       gerenciamento de riscos ocupacionais e para o cumprimento das demais
       Normas Regulamentadoras.
     </p>
+
   </section>
 
+  <!-- OBJETIVO -->
   <section>
+
     <h2>Objetivo do Treinamento</h2>
+
     <ul>
       <li>Apresentar os conceitos fundamentais da NR-01</li>
       <li>Compreender o Gerenciamento de Riscos Ocupacionais (GRO)</li>
       <li>Relacionar a NR-01 ao PGR e às demais NRs</li>
       <li>Atender às exigências legais e auditorias</li>
     </ul>
+
   </section>
 
+  <!-- CONTEÚDO -->
   <section>
+
     <h2>Conteúdo Programático</h2>
+
     <ul>
       <li>Campo de aplicação da NR-01</li>
       <li>Direitos e deveres do empregador e do empregado</li>
@@ -52,18 +65,248 @@
       <li>Programa de Gerenciamento de Riscos (PGR)</li>
       <li>Responsabilidades e penalidades</li>
     </ul>
+
   </section>
 
+  <!-- CARGA HORÁRIA -->
   <section>
+
     <h2>Carga Horária</h2>
+
     <p>⏱️ <strong>2 horas</strong></p>
+
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+
+    <h2>🎥 Vídeo Obrigatório</h2>
+
+    <video id="videoTreinamento"
+    width="100%"
+    controls>
+
+      <source src="videos/nr01.mp4"
+      type="video/mp4">
+
+      Seu navegador não suporta vídeo.
+
+    </video>
+
+    <p id="statusVideo"
+    style="color:red;">
+
+      ⚠️ Assista o vídeo completo para liberar a avaliação.
+
+    </p>
+
+  </section>
+
+  <!-- AVALIAÇÃO -->
+  <section>
+
+    <h2>📝 Avaliação</h2>
+
+    <input type="text"
+    id="nome"
+    placeholder="Nome Completo">
+
+    <br><br>
+
+    <input type="text"
+    id="funcao"
+    placeholder="Função">
+
+    <br><br>
+
+    <input type="text"
+    id="cpf"
+    placeholder="CPF">
+
+    <br><br>
+
+    <label>
+
+      <input type="checkbox"
+      id="declaracao">
+
+      Declaro que realizei este treinamento.
+
+    </label>
+
+    <h3>Perguntas</h3>
+
+    <!-- PERGUNTA 1 -->
+    <p>1. A NR-01 trata sobre:</p>
+
+    <label>
+      <input type="radio"
+      name="q1"
+      value="certo">
+
+      Segurança e saúde no trabalho
+    </label>
+
+    <br>
+
+    <label>
+      <input type="radio"
+      name="q1"
+      value="errado">
+
+      Somente uniformes
+    </label>
+
+    <br><br>
+
+    <!-- PERGUNTA 2 -->
+    <p>2. O PGR significa:</p>
+
+    <label>
+      <input type="radio"
+      name="q2"
+      value="certo">
+
+      Programa de Gerenciamento de Riscos
+    </label>
+
+    <br>
+
+    <label>
+      <input type="radio"
+      name="q2"
+      value="errado">
+
+      Plano Geral de Reformas
+    </label>
+
+    <br><br>
+
+    <button onclick="corrigir()">
+      Finalizar Avaliação
+    </button>
+
+    <p id="resultado"></p>
+
   </section>
 
 </main>
 
 <footer>
-  <p>© Pavidez Engenharia – Plataforma de Treinamentos Corporativos</p>
+
+  <p>
+    © Pavidez Engenharia – Plataforma de Treinamentos Corporativos
+  </p>
+
 </footer>
+
+<script>
+
+let videoAssistido = false;
+
+document.getElementById("videoTreinamento")
+.addEventListener("ended", function(){
+
+  videoAssistido = true;
+
+  document.getElementById("statusVideo").innerHTML =
+  "✅ Vídeo concluído";
+
+  document.getElementById("statusVideo").style.color =
+  "green";
+
+});
+
+function corrigir(){
+
+  // VERIFICA VÍDEO
+  if(!videoAssistido){
+
+    alert("Assista o vídeo completo!");
+
+    return;
+  }
+
+  // DADOS
+  let nome =
+  document.getElementById("nome").value;
+
+  let funcao =
+  document.getElementById("funcao").value;
+
+  let cpf =
+  document.getElementById("cpf").value;
+
+  let declaracao =
+  document.getElementById("declaracao").checked;
+
+  // VALIDA CAMPOS
+  if(nome === "" || funcao === "" || cpf === ""){
+
+    alert("Preencha todos os dados!");
+
+    return;
+  }
+
+  // VALIDA DECLARAÇÃO
+  if(!declaracao){
+
+    alert("Confirme a declaração!");
+
+    return;
+  }
+
+  // VALIDA RESPOSTAS
+  let respostas =
+  document.querySelectorAll(
+  'input[type="radio"]:checked'
+  );
+
+  if(respostas.length < 2){
+
+    alert("Responda todas as perguntas!");
+
+    return;
+  }
+
+  // CORREÇÃO
+  let pontos = 0;
+
+  respostas.forEach(r => {
+
+    if(r.value === "certo"){
+
+      pontos++;
+
+    }
+
+  });
+
+  let resultado =
+  document.getElementById("resultado");
+
+  // RESULTADO FINAL
+  if(pontos >= 2){
+
+    resultado.innerHTML =
+    "✅ Aprovado";
+
+    resultado.style.color =
+    "green";
+
+  } else {
+
+    resultado.innerHTML =
+    "❌ Reprovado";
+
+    resultado.style.color =
+    "red";
+
+  }
+
+}
+
+</script>
 
 </body>
 </html>
