@@ -4,7 +4,60 @@
 <head>
 <meta charset="UTF-8">
 <title>NR-01 – Disposições Gerais | Pavidez Engenharia</title>
+
 <link rel="stylesheet" href="./style.css">
+
+<style>
+
+.pergunta{
+background:#f5f5f5;
+padding:20px;
+margin-bottom:25px;
+border-radius:10px;
+border-left:5px solid #f2b705;
+}
+
+.pergunta p{
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.pergunta label{
+display:block;
+margin-bottom:10px;
+font-size:16px;
+}
+
+button{
+background:#f2b705;
+color:#000;
+padding:14px 25px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+input[type="text"]{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+section{
+margin-bottom:40px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -96,7 +149,7 @@ allowfullscreen>
 </iframe>
 
 <p id="statusVideo"
-style="color:red;font-weight:bold;">
+style="color:red;font-weight:bold;margin-top:10px;">
 
 ⚠️ Assista o vídeo antes de realizar a avaliação.
 
@@ -111,18 +164,15 @@ style="color:red;font-weight:bold;">
 
 <input type="text"
 id="nome"
-placeholder="Nome Completo"
-style="width:100%;padding:12px;margin-bottom:15px;">
+placeholder="Nome Completo">
 
 <input type="text"
 id="funcao"
-placeholder="Função"
-style="width:100%;padding:12px;margin-bottom:15px;">
+placeholder="Função">
 
 <input type="text"
 id="cpf"
-placeholder="CPF"
-style="width:100%;padding:12px;margin-bottom:15px;">
+placeholder="CPF">
 
 <label>
 
@@ -147,8 +197,6 @@ Declaro que realizei este treinamento.
 Segurança e saúde no trabalho
 </label>
 
-<br>
-
 <label>
 <input type="radio" name="q1" value="errado">
 Somente uniformes
@@ -165,8 +213,6 @@ Somente uniformes
 <input type="radio" name="q2" value="certo">
 Programa de Gerenciamento de Riscos
 </label>
-
-<br>
 
 <label>
 <input type="radio" name="q2" value="errado">
@@ -185,8 +231,6 @@ Plano Geral de Reformas
 Ao gerenciamento de riscos ocupacionais
 </label>
 
-<br>
-
 <label>
 <input type="radio" name="q3" value="errado">
 Somente à folha de pagamento
@@ -203,8 +247,6 @@ Somente à folha de pagamento
 <input type="radio" name="q4" value="certo">
 Cumprir normas de segurança
 </label>
-
-<br>
 
 <label>
 <input type="radio" name="q4" value="errado">
@@ -223,8 +265,6 @@ Ignorar procedimentos
 Define diretrizes de segurança
 </label>
 
-<br>
-
 <label>
 <input type="radio" name="q5" value="errado">
 Trata apenas de uniformes
@@ -232,16 +272,13 @@ Trata apenas de uniformes
 
 </div>
 
-<br>
-
 <button onclick="corrigir()">
-
 Finalizar Avaliação
-
 </button>
 
 <p id="resultado"
-style="font-weight:bold;font-size:20px;"></p>
+style="font-weight:bold;font-size:22px;margin-top:20px;">
+</p>
 
 </section>
 
