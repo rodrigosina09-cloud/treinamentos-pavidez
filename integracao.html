@@ -604,15 +604,33 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-const ipUsuario = await fetch(
-'https://api.ipify.org?format=json'
-)
-.then(res => res.json())
-.then(data => data.ip);
+let ipUsuario = "IP não identificado";
 
-fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
+try{
+
+const respostaIP = await fetch(
+'https://api.ipify.org?format=json'
+);
+
+const dadosIP = await respostaIP.json();
+
+ipUsuario = dadosIP.ip;
+
+}catch(erro){
+
+console.log("Erro ao obter IP");
+
+}
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
+{
 
 method: "POST",
+
+headers:{
+"Content-Type":"application/json"
+},
 
 body: JSON.stringify({
 
