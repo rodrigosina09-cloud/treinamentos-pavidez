@@ -240,8 +240,6 @@ e valores da Pavidez Engenharia.
 
 </ul>
 
-<!-- VIDEO -->
-
 <div class="box">
 
 <h2 style="
@@ -256,28 +254,17 @@ margin-top:0;
 
 <p>
 
-Assista ao vídeo completo antes de realizar a avaliação.
+Assista ao vídeo institucional abaixo.
 
 </p>
 
 <video
-id="videoIntegracao"
 controls>
 
-<source src="Pavidez_30s_Piano.mp4" type="video/mp4">
+<source src="Pavidez_30s_Piano.mp4"
+type="video/mp4">
 
 </video>
-
-<p id="statusVideo"
-style="
-font-weight:bold;
-color:red;
-margin-top:15px;
-">
-
-⚠️ Assista o vídeo completo para liberar a avaliação.
-
-</p>
 
 </div>
 
@@ -352,8 +339,6 @@ garantindo um ambiente de trabalho seguro e organizado.
 </p>
 
 </div>
-
-<!-- AVALIAÇÃO -->
 
 <section style="
 margin-top:60px;
@@ -512,25 +497,9 @@ margin-top:20px;
 
 <script>
 
-let videoAssistido = false;
+let videoAssistido = true;
 
-document
-.getElementById("videoIntegracao")
-.addEventListener("ended", function(){
-
-videoAssistido = true;
-
-document
-.getElementById("statusVideo")
-.innerHTML = "✅ Vídeo concluído";
-
-document
-.getElementById("statusVideo")
-.style.color = "green";
-
-});
-
-async function corrigir(){
+function corrigir(){
 
 if(!videoAssistido){
 
@@ -604,33 +573,11 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-let ipUsuario = "IP não identificado";
-
-try{
-
-const respostaIP = await fetch(
-'https://api.ipify.org?format=json'
-);
-
-const dadosIP = await respostaIP.json();
-
-ipUsuario = dadosIP.ip;
-
-}catch(erro){
-
-console.log("Erro ao obter IP");
-
-}
-
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
 
 method: "POST",
-
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
 
 body: JSON.stringify({
 
@@ -640,23 +587,11 @@ cpf: cpf,
 nr: "INTEGRAÇÃO",
 nota: pontos,
 
-ip: ipUsuario,
+ip: "IP não identificado",
 
 dispositivo: navigator.userAgent
 
 })
-
-})
-
-.then(response => response.text())
-.then(data => {
-
-console.log("Sucesso:", data);
-
-})
-.catch(error => {
-
-console.log("Erro:", error);
 
 });
 
