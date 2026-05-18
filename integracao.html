@@ -622,14 +622,14 @@ console.log("Erro ao obter IP");
 
 }
 
-await fetch(
+fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
 
 method: "POST",
 
 headers:{
-"Content-Type":"application/json"
+"Content-Type":"text/plain;charset=utf-8"
 },
 
 body: JSON.stringify({
@@ -645,6 +645,18 @@ ip: ipUsuario,
 dispositivo: navigator.userAgent
 
 })
+
+})
+
+.then(response => response.text())
+.then(data => {
+
+console.log("Sucesso:", data);
+
+})
+.catch(error => {
+
+console.log("Erro:", error);
 
 });
 
