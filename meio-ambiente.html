@@ -137,8 +137,6 @@ color:#111;
 
 <h1>🌿 Treinamento de Meio Ambiente</h1>
 
-<!-- CONTEÚDO -->
-
 <div class="card">
 
 <h2>🌱 Conceito de Meio Ambiente</h2>
@@ -215,8 +213,6 @@ sendo responsabilidade de todos evitar danos.
 
 </div>
 
-<!-- VIDEO -->
-
 <div class="card">
 
 <h2>🎥 Vídeo Obrigatório</h2>
@@ -237,8 +233,6 @@ style="color:red;font-weight:bold;">
 </p>
 
 </div>
-
-<!-- AVALIAÇÃO -->
 
 <div class="card">
 
@@ -269,8 +263,6 @@ Declaro que realizei este treinamento
 
 <h3>Perguntas</h3>
 
-<!-- 1 -->
-
 <div class="pergunta">
 
 <p>1. Meio ambiente é:</p>
@@ -286,8 +278,6 @@ Apenas natureza
 </label>
 
 </div>
-
-<!-- 2 -->
 
 <div class="pergunta">
 
@@ -305,8 +295,6 @@ Não
 
 </div>
 
-<!-- 3 -->
-
 <div class="pergunta">
 
 <p>3. Resíduos perigosos devem:</p>
@@ -322,8 +310,6 @@ Ir para lixo comum
 </label>
 
 </div>
-
-<!-- 4 -->
 
 <div class="pergunta">
 
@@ -457,8 +443,6 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-/* SALVAR NA PLANILHA */
-
 fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
 
 method: "POST",
@@ -469,7 +453,11 @@ nome: nome,
 funcao: funcao,
 cpf: cpf,
 nr: "MEIO AMBIENTE",
-nota: pontos
+nota: pontos,
+
+ip: "IP não identificado",
+
+dispositivo: navigator.userAgent
 
 })
 
