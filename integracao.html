@@ -142,6 +142,12 @@
   margin-top:40px;
   }
 
+  video{
+  width:100%;
+  border-radius:10px;
+  margin-top:20px;
+  }
+
   @media(max-width:768px){
 
   .topo{
@@ -229,6 +235,47 @@ e valores da Pavidez Engenharia.
 <li>Direitos e deveres do colaborador</li>
 
 </ul>
+
+<!-- VIDEO -->
+
+<div class="box">
+
+<h2 style="
+font-size:24px;
+border:none;
+margin-top:0;
+">
+
+🎥 Vídeo Institucional
+
+</h2>
+
+<p>
+
+Assista ao vídeo completo antes de realizar a avaliação.
+
+</p>
+
+<video
+id="videoIntegracao"
+controls>
+
+<source src="Pavidez_30s_Piano.mp4" type="video/mp4">
+
+</video>
+
+<p id="statusVideo"
+style="
+font-weight:bold;
+color:red;
+margin-top:15px;
+">
+
+⚠️ Assista o vídeo completo para liberar a avaliação.
+
+</p>
+
+</div>
 
 <div class="box">
 
@@ -348,10 +395,7 @@ Declaro que realizei este treinamento.
 <h3>Perguntas</h3>
 
 <div class="pergunta">
-
-<p>
-1. A segurança do trabalho é:
-</p>
+<p>1. A segurança do trabalho é:</p>
 
 <label>
 <input type="radio" name="q1" value="certo">
@@ -362,14 +406,10 @@ Prioridade da empresa
 <input type="radio" name="q1" value="errado">
 Opcional
 </label>
-
 </div>
 
 <div class="pergunta">
-
-<p>
-2. O colaborador deve:
-</p>
+<p>2. O colaborador deve:</p>
 
 <label>
 <input type="radio" name="q2" value="certo">
@@ -380,14 +420,10 @@ Utilizar EPIs corretamente
 <input type="radio" name="q2" value="errado">
 Ignorar procedimentos
 </label>
-
 </div>
 
 <div class="pergunta">
-
-<p>
-3. A empresa atua conforme:
-</p>
+<p>3. A empresa atua conforme:</p>
 
 <label>
 <input type="radio" name="q3" value="certo">
@@ -398,14 +434,10 @@ Normas e legislações
 <input type="radio" name="q3" value="errado">
 Sem regras
 </label>
-
 </div>
 
 <div class="pergunta">
-
-<p>
-4. Sustentabilidade significa:
-</p>
+<p>4. Sustentabilidade significa:</p>
 
 <label>
 <input type="radio" name="q4" value="certo">
@@ -416,14 +448,10 @@ Respeito ao meio ambiente
 <input type="radio" name="q4" value="errado">
 Desperdício de recursos
 </label>
-
 </div>
 
 <div class="pergunta">
-
-<p>
-5. O colaborador deve comunicar:
-</p>
+<p>5. O colaborador deve comunicar:</p>
 
 <label>
 <input type="radio" name="q5" value="certo">
@@ -434,7 +462,6 @@ Situações de risco
 <input type="radio" name="q5" value="errado">
 Nada ao supervisor
 </label>
-
 </div>
 
 <button onclick="corrigir()">
@@ -461,7 +488,33 @@ margin-top:20px;
 
 <script>
 
+let videoAssistido = false;
+
+document
+.getElementById("videoIntegracao")
+.addEventListener("ended", function(){
+
+videoAssistido = true;
+
+document
+.getElementById("statusVideo")
+.innerHTML = "✅ Vídeo concluído";
+
+document
+.getElementById("statusVideo")
+.style.color = "green";
+
+});
+
 function corrigir(){
+
+if(!videoAssistido){
+
+alert("Assista o vídeo completo!");
+
+return;
+
+}
 
 let nome =
 document.getElementById("nome").value;
