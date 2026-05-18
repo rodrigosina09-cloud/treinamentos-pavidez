@@ -499,15 +499,7 @@ margin-top:20px;
 
 let videoAssistido = true;
 
-function corrigir(){
-
-if(!videoAssistido){
-
-alert("Assista o vídeo completo!");
-
-return;
-
-}
+async function corrigir(){
 
 let nome =
 document.getElementById("nome").value;
@@ -573,6 +565,24 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
+let ipUsuario = "IP não identificado";
+
+try{
+
+const respostaIP = await fetch(
+"https://api64.ipify.org?format=json"
+);
+
+const dadosIP = await respostaIP.json();
+
+ipUsuario = dadosIP.ip;
+
+}catch(erro){
+
+console.log("Erro IP");
+
+}
+
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
@@ -587,7 +597,7 @@ cpf: cpf,
 nr: "INTEGRAÇÃO",
 nota: pontos,
 
-ip: "IP não identificado",
+ip: ipUsuario,
 
 dispositivo: navigator.userAgent
 
