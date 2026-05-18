@@ -394,6 +394,24 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
+/* SALVAR NA PLANILHA */
+
+fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
+
+method: "POST",
+
+body: JSON.stringify({
+
+nome: nome,
+funcao: funcao,
+cpf: cpf,
+nr: "NR-26",
+nota: pontos
+
+})
+
+});
+
 } else {
 
 resultado.innerHTML =
