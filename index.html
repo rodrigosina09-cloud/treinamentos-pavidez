@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
 <meta charset="UTF-8">
 
 <title>
@@ -11,86 +12,232 @@ Plataforma de Treinamentos | Pavidez Engenharia
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-</head>
+<style>
 
-<body style="
+*{
+box-sizing:border-box;
+}
+
+body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#f5f5f5;
 color:#222;
-">
+overflow-x:hidden;
+}
 
-<header style="
+/* TOPO */
+
+header{
 background:#ffffff;
 border-bottom:4px solid #f2b705;
-">
+}
 
-<div style="
+.topo{
 max-width:1200px;
 margin:0 auto;
 padding:24px;
-">
+}
 
-<img src="imagem/logo-pavidez.png"
-alt="Pavidez Engenharia"
-style="height:70px;">
+.logo{
+height:70px;
+max-width:100%;
+}
 
-</div>
+/* MENU */
 
-<div style="
+.menu-fundo{
 background:#f2b705;
 padding:20px;
-">
+}
 
-<div style="
+.menu{
 max-width:1200px;
 margin:0 auto;
 display:flex;
 gap:30px;
 flex-wrap:wrap;
-">
+}
 
-<a href="treinamentos.html"
-style="
-background:#111;
-color:#f2b705;
-padding:14px 50px;
-font-weight:900;
-text-decoration:none;
-border-radius:6px;
-">
-
-TREINAMENTOS
-
-</a>
-
-<a href="https://pavidez.com.br/politica-de-compliance/"
-target="_blank"
-
-style="
+.menu a{
 background:#111;
 color:#f2b705;
 padding:14px 40px;
 font-weight:900;
 text-decoration:none;
 border-radius:6px;
-">
+text-align:center;
+transition:0.3s;
+}
+
+.menu a:hover{
+opacity:0.9;
+}
+
+/* CONTEÚDO */
+
+main{
+max-width:1200px;
+margin:40px auto;
+background:#ffffff;
+padding:60px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+h1{
+border-left:6px solid #f2b705;
+padding-left:16px;
+font-size:42px;
+margin-bottom:30px;
+line-height:1.2;
+}
+
+p{
+font-size:18px;
+line-height:1.9;
+color:#444;
+}
+
+.box{
+background:#f5f5f5;
+padding:25px;
+border-left:6px solid #f2b705;
+margin-top:40px;
+border-radius:8px;
+}
+
+.box h2{
+margin-top:0;
+font-size:26px;
+}
+
+.base-legal{
+margin-top:50px;
+border-left:6px solid #f2b705;
+padding-left:14px;
+}
+
+ul{
+font-size:17px;
+line-height:2;
+color:#444;
+}
+
+.botao{
+display:inline-block;
+background:#f2b705;
+color:#111;
+padding:18px 40px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+border-radius:8px;
+margin-top:50px;
+}
+
+/* RODAPÉ */
+
+footer{
+text-align:center;
+padding:25px;
+border-top:3px solid #f2b705;
+background:#ffffff;
+font-size:15px;
+line-height:1.8;
+color:#444;
+margin-top:40px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.topo{
+padding:18px;
+text-align:center;
+}
+
+.logo{
+height:55px;
+}
+
+.menu{
+flex-direction:column;
+gap:18px;
+}
+
+.menu a{
+width:100%;
+padding:18px;
+font-size:20px;
+}
+
+main{
+margin:15px;
+padding:25px;
+}
+
+h1{
+font-size:28px;
+}
+
+p{
+font-size:16px;
+line-height:1.7;
+}
+
+.box h2{
+font-size:22px;
+}
+
+ul{
+font-size:16px;
+padding-left:20px;
+}
+
+.botao{
+width:100%;
+text-align:center;
+font-size:18px;
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="topo">
+
+<img src="imagem/logo-pavidez.png"
+alt="Pavidez Engenharia"
+class="logo">
+
+</div>
+
+<div class="menu-fundo">
+
+<div class="menu">
+
+<a href="treinamentos.html">
+TREINAMENTOS
+</a>
+
+<a href="https://pavidez.com.br/politica-de-compliance/"
+target="_blank">
 
 COMPLIANCE
 
 </a>
 
 <a href="https://canal-etico.pavidez.com.br/"
-target="_blank"
-
-style="
-background:#111;
-color:#f2b705;
-padding:14px 40px;
-font-weight:900;
-text-decoration:none;
-border-radius:6px;
-">
+target="_blank">
 
 CANAL DE DENÚNCIAS
 
@@ -102,31 +249,13 @@ CANAL DE DENÚNCIAS
 
 </header>
 
-<main style="
-max-width:1200px;
-margin:40px auto;
-background:#ffffff;
-padding:60px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-">
+<main>
 
-<h1 style="
-border-left:6px solid #f2b705;
-padding-left:16px;
-font-size:42px;
-margin-bottom:30px;
-">
-
+<h1>
 Plataforma Corporativa de Treinamentos
-
 </h1>
 
-<p style="
-font-size:18px;
-line-height:1.9;
-color:#444;
-">
+<p>
 
 A Plataforma de Treinamentos da Pavidez Engenharia foi desenvolvida
 com o objetivo de centralizar, organizar e padronizar os treinamentos
@@ -135,29 +264,13 @@ promovendo conformidade legal, segurança operacional e rastreabilidade.
 
 </p>
 
-<div style="
-background:#f5f5f5;
-padding:25px;
-border-left:6px solid #f2b705;
-margin-top:40px;
-border-radius:8px;
-">
+<div class="box">
 
-<h2 style="
-margin-top:0;
-font-size:26px;
-">
-
+<h2>
 🌱 Meio Ambiente e Sustentabilidade
-
 </h2>
 
-<p style="
-font-size:17px;
-line-height:1.8;
-margin-bottom:0;
-color:#444;
-">
+<p>
 
 A Pavidez Engenharia promove práticas sustentáveis em todas as suas operações,
 garantindo a preservação do meio ambiente, o uso consciente de recursos naturais
@@ -167,21 +280,11 @@ e o atendimento às legislações ambientais vigentes.
 
 </div>
 
-<h2 style="
-margin-top:50px;
-border-left:6px solid #f2b705;
-padding-left:14px;
-">
-
+<h2 class="base-legal">
 Base Legal
-
 </h2>
 
-<ul style="
-font-size:17px;
-line-height:2;
-color:#444;
-">
+<ul>
 
 <li>CLT – Consolidação das Leis do Trabalho</li>
 
@@ -193,40 +296,16 @@ color:#444;
 
 </ul>
 
-<div style="
-margin-top:50px;
-">
-
 <a href="treinamentos.html"
-
-style="
-display:inline-block;
-background:#f2b705;
-color:#111;
-padding:18px 40px;
-font-size:18px;
-font-weight:bold;
-text-decoration:none;
-border-radius:8px;
-">
+class="botao">
 
 ➜ Acessar lista completa de treinamentos
 
 </a>
 
-</div>
-
 </main>
 
-<footer style="
-text-align:center;
-padding:25px;
-border-top:3px solid #f2b705;
-background:#ffffff;
-font-size:15px;
-line-height:1.8;
-color:#444;
-">
+<footer>
 
 © Pavidez Engenharia – Plataforma de Treinamentos Corporativos
 
