@@ -50,6 +50,7 @@ margin-bottom:15px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
+box-sizing:border-box;
 }
 
 section{
@@ -91,7 +92,6 @@ style="height:55px;">
 
 <main>
 
-<!-- INTRODUÇÃO -->
 <section>
 
 <h2>NR-12 – Segurança no Trabalho em Máquinas e Equipamentos</h2>
@@ -104,7 +104,6 @@ manutenção, inspeção e limpeza de máquinas e equipamentos.
 
 </section>
 
-<!-- OBJETIVO -->
 <section>
 
 <h2>Objetivo do Treinamento</h2>
@@ -118,7 +117,6 @@ manutenção, inspeção e limpeza de máquinas e equipamentos.
 
 </section>
 
-<!-- CONTEÚDO -->
 <section>
 
 <h2>Conteúdo Programático</h2>
@@ -135,7 +133,6 @@ manutenção, inspeção e limpeza de máquinas e equipamentos.
 
 </section>
 
-<!-- CARGA HORÁRIA -->
 <section>
 
 <h2>Carga Horária</h2>
@@ -154,7 +151,6 @@ legais aplicáveis.
 
 </section>
 
-<!-- VIDEO -->
 <section>
 
 <h2>🎥 Vídeo Obrigatório</h2>
@@ -178,7 +174,6 @@ style="color:red;font-weight:bold;margin-top:10px;">
 
 </section>
 
-<!-- AVALIAÇÃO -->
 <section>
 
 <h2>📝 Avaliação</h2>
@@ -208,7 +203,6 @@ Declaro que realizei este treinamento.
 
 <h3>Perguntas</h3>
 
-<!-- 1 -->
 <div class="pergunta">
 
 <p>1. A NR-12 trata sobre:</p>
@@ -225,7 +219,6 @@ Somente escritório
 
 </div>
 
-<!-- 2 -->
 <div class="pergunta">
 
 <p>2. As proteções das máquinas servem para:</p>
@@ -242,7 +235,6 @@ Aumentar velocidade da máquina
 
 </div>
 
-<!-- 3 -->
 <div class="pergunta">
 
 <p>3. O botão de emergência deve:</p>
@@ -259,7 +251,6 @@ Ficar escondido
 
 </div>
 
-<!-- 4 -->
 <div class="pergunta">
 
 <p>4. A manutenção de máquinas deve:</p>
@@ -276,7 +267,6 @@ Ser feita com máquina ligada sem cuidado
 
 </div>
 
-<!-- 5 -->
 <div class="pergunta">
 
 <p>5. O trabalhador deve:</p>
@@ -391,8 +381,6 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-/* SALVAR NA PLANILHA */
-
 fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
 
 method: "POST",
@@ -403,7 +391,11 @@ nome: nome,
 funcao: funcao,
 cpf: cpf,
 nr: "NR-12",
-nota: pontos
+nota: pontos,
+
+ip: "IP não identificado",
+
+dispositivo: navigator.userAgent
 
 })
 
