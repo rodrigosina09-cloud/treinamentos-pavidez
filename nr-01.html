@@ -50,6 +50,7 @@ margin-bottom:15px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
+box-sizing:border-box;
 }
 
 section{
@@ -91,7 +92,6 @@ style="height:55px;">
 
 <main>
 
-<!-- INTRODUÇÃO -->
 <section>
 
 <h2>NR-01 – Disposições Gerais</h2>
@@ -105,7 +105,6 @@ Normas Regulamentadoras.
 
 </section>
 
-<!-- OBJETIVO -->
 <section>
 
 <h2>Objetivo do Treinamento</h2>
@@ -119,7 +118,6 @@ Normas Regulamentadoras.
 
 </section>
 
-<!-- CONTEÚDO -->
 <section>
 
 <h2>Conteúdo Programático</h2>
@@ -134,7 +132,6 @@ Normas Regulamentadoras.
 
 </section>
 
-<!-- CARGA HORÁRIA -->
 <section>
 
 <h2>Carga Horária</h2>
@@ -153,7 +150,6 @@ legais aplicáveis.
 
 </section>
 
-<!-- VIDEO -->
 <section>
 
 <h2>🎥 Vídeo Obrigatório</h2>
@@ -177,7 +173,6 @@ style="color:red;font-weight:bold;margin-top:10px;">
 
 </section>
 
-<!-- AVALIAÇÃO -->
 <section>
 
 <h2>📝 Avaliação</h2>
@@ -207,7 +202,6 @@ Declaro que realizei este treinamento.
 
 <h3>Perguntas</h3>
 
-<!-- 1 -->
 <div class="pergunta">
 
 <p>1. A NR-01 trata sobre:</p>
@@ -224,7 +218,6 @@ Somente uniformes
 
 </div>
 
-<!-- 2 -->
 <div class="pergunta">
 
 <p>2. O PGR significa:</p>
@@ -241,7 +234,6 @@ Plano Geral de Reformas
 
 </div>
 
-<!-- 3 -->
 <div class="pergunta">
 
 <p>3. O GRO está relacionado:</p>
@@ -258,7 +250,6 @@ Somente à folha de pagamento
 
 </div>
 
-<!-- 4 -->
 <div class="pergunta">
 
 <p>4. O trabalhador deve:</p>
@@ -275,7 +266,6 @@ Ignorar procedimentos
 
 </div>
 
-<!-- 5 -->
 <div class="pergunta">
 
 <p>5. A NR-01 é importante porque:</p>
@@ -390,8 +380,6 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-/* SALVAR NA PLANILHA */
-
 fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
 
 method: "POST",
@@ -402,7 +390,11 @@ nome: nome,
 funcao: funcao,
 cpf: cpf,
 nr: "NR-01",
-nota: pontos
+nota: pontos,
+
+ip: "IP não identificado",
+
+dispositivo: navigator.userAgent
 
 })
 
