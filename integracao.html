@@ -259,12 +259,24 @@ Assista ao vídeo institucional abaixo.
 </p>
 
 <video
+id="videoIntegracao"
 controls>
 
 <source src="Pavidez_30s_Piano.mp4"
 type="video/mp4">
 
 </video>
+
+<p id="statusVideo"
+style="
+font-weight:bold;
+color:red;
+margin-top:15px;
+">
+
+⚠️ Assista o vídeo completo para liberar a avaliação.
+
+</p>
 
 </div>
 
@@ -497,9 +509,35 @@ margin-top:20px;
 
 <script>
 
-let videoAssistido = true;
+let videoAssistido = false;
+
+document
+.getElementById("videoIntegracao")
+.addEventListener("ended", function(){
+
+videoAssistido = true;
+
+document
+.getElementById("statusVideo")
+.innerHTML =
+"✅ Vídeo concluído";
+
+document
+.getElementById("statusVideo")
+.style.color =
+"green";
+
+});
 
 async function corrigir(){
+
+if(!videoAssistido){
+
+alert("Assista o vídeo completo antes de finalizar!");
+
+return;
+
+}
 
 let nome =
 document.getElementById("nome").value;
@@ -565,24 +603,6 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-let ipUsuario = "IP não identificado";
-
-try{
-
-const respostaIP = await fetch(
-"https://api64.ipify.org?format=json"
-);
-
-const dadosIP = await respostaIP.json();
-
-ipUsuario = dadosIP.ip;
-
-}catch(erro){
-
-console.log("Erro IP");
-
-}
-
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
@@ -597,7 +617,7 @@ cpf: cpf,
 nr: "INTEGRAÇÃO",
 nota: pontos,
 
-ip: ipUsuario,
+ip: "",
 
 dispositivo: navigator.userAgent
 
