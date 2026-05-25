@@ -18,116 +18,141 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#f5f5f5;
-color:#222;
-overflow-x:hidden;
+color:#111;
 }
 
 header{
-background:#fff;
-border-bottom:4px solid #f2b705;
-}
-
-.topo{
-max-width:1200px;
-margin:auto;
-padding:24px;
+background:#ffffff;
+border-bottom:3px solid #f2b705;
+text-align:center;
+padding:18px 20px 22px 20px;
 }
 
 .logo{
-height:64px;
+height:70px;
 max-width:100%;
+display:block;
+margin:0 auto 5px auto;
 }
 
-.voltar{
-text-decoration:none;
-font-weight:700;
-color:#111;
-display:inline-block;
-margin-top:10px;
-margin-bottom:18px;
-}
-
-.titulo-topo{
-font-size:22px;
-font-weight:800;
-text-transform:uppercase;
-border-left:6px solid #f2b705;
-padding-left:12px;
+nav a{
+color:#1a0dab;
+font-size:14px;
+margin:0 2px;
 }
 
 main{
-max-width:1200px;
+max-width:960px;
 margin:40px auto;
-background:#fff;
-padding:48px;
-border-radius:10px;
+background:#ffffff;
+padding:38px;
+border-radius:6px;
 }
 
-h2{
-font-size:28px;
+h1{
+font-size:20px;
+margin:0 0 24px 0;
 border-bottom:2px solid #f2b705;
 display:inline-block;
 padding-bottom:6px;
-margin-bottom:24px;
+}
+
+h2{
+font-size:18px;
+margin-top:34px;
+margin-bottom:14px;
+border-bottom:2px solid #f2b705;
+display:inline-block;
+padding-bottom:6px;
 }
 
 p{
-font-size:17px;
-line-height:1.8;
-color:#444;
+font-size:14px;
+line-height:1.7;
+margin-bottom:18px;
 }
 
 ul{
+font-size:14px;
+line-height:1.9;
+padding-left:18px;
+}
+
+li{
+margin-bottom:4px;
+}
+
+.box-alerta{
+background:#fff7df;
+border-left:4px solid #f2b705;
+padding:15px;
+border-radius:6px;
+font-size:13px;
+line-height:1.7;
 margin-top:20px;
-font-size:16px;
-line-height:2;
-color:#444;
 }
 
-.box{
-background:#f5f5f5;
-padding:25px;
-border-left:6px solid #f2b705;
+video{
+width:100%;
 border-radius:8px;
-margin-top:30px;
+margin-top:16px;
 }
 
-.pergunta{
-background:#eeeeee;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-border-left:5px solid #f2b705;
-}
-
-.pergunta p{
+#statusVideo{
 font-weight:bold;
-margin-bottom:15px;
+color:red;
+font-size:14px;
+margin-top:15px;
 }
 
-.pergunta label{
-display:block;
-margin-bottom:10px;
+.avaliacao{
+margin-top:35px;
 }
 
 input[type="text"]{
 width:100%;
 padding:12px;
-margin-bottom:15px;
+margin-bottom:14px;
 border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
+border-radius:6px;
+font-size:15px;
+}
+
+label{
+font-size:14px;
+}
+
+.pergunta{
+margin-top:20px;
+padding:18px;
+border-left:4px solid #f2b705;
+background:#ffffff;
+border-radius:5px;
+}
+
+.pergunta p{
+font-weight:bold;
+margin-top:0;
+margin-bottom:12px;
+}
+
+.pergunta label{
+display:block;
+margin-bottom:10px;
+font-size:14px;
 }
 
 button{
 background:#f2b705;
 color:#000;
-padding:14px 25px;
 border:none;
-border-radius:8px;
+padding:12px 24px;
+border-radius:6px;
 font-weight:bold;
+font-size:15px;
 cursor:pointer;
-font-size:16px;
+display:block;
+margin:30px auto 0 auto;
 }
 
 button:hover{
@@ -137,39 +162,28 @@ opacity:0.9;
 footer{
 text-align:center;
 padding:22px;
-font-size:15px;
 border-top:3px solid #f2b705;
-background:#fff;
-margin-top:40px;
-}
-
-video{
-width:100%;
-border-radius:10px;
-margin-top:20px;
+background:#ffffff;
+font-size:14px;
 }
 
 @media(max-width:768px){
 
-.topo{
-padding:18px;
+main{
+margin:18px;
+padding:24px;
 }
 
 .logo{
-height:55px;
+height:60px;
 }
 
-main{
-margin:15px;
-padding:25px;
+h1{
+font-size:19px;
 }
 
 h2{
-font-size:24px;
-}
-
-p{
-font-size:16px;
+font-size:17px;
 }
 
 button{
@@ -186,113 +200,76 @@ width:100%;
 
 <header>
 
-<div class="topo">
+<img src="imagem/logo-pavidez.png" alt="Pavidez Engenharia" class="logo">
 
-<img src="imagem/logo-pavidez.png"
-alt="Pavidez Engenharia"
-class="logo">
-
-<br>
-
-<a href="treinamentos.html" class="voltar">← Voltar</a>
-
-<div class="titulo-topo">
-Integração
-</div>
-
-</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="treinamentos.html">Treinamentos</a>
+</nav>
 
 </header>
 
 <main>
 
-<h2>Treinamento de Integração</h2>
+<h1>Integração</h1>
 
 <p>
-O Treinamento de Integração tem como objetivo apresentar ao colaborador
-as principais orientações sobre a Pavidez Engenharia, sua forma de atuação,
-regras internas, segurança do trabalho, conduta profissional e responsabilidades
-durante as atividades.
+O Treinamento de Integração apresenta ao colaborador as principais orientações
+sobre a Pavidez Engenharia, seus compromissos, sua forma de atuação, regras
+internas, segurança do trabalho, responsabilidade profissional e cuidados
+necessários no ambiente de trabalho.
 </p>
 
-<div class="box">
-
-<h2 style="font-size:24px;border:none;margin-top:0;">
-Objetivo do Treinamento
-</h2>
+<h2>Objetivo do Treinamento</h2>
 
 <ul>
-<li>Apresentar a empresa e seus compromissos.</li>
-<li>Orientar sobre segurança, qualidade e responsabilidade.</li>
-<li>Reforçar direitos e deveres do colaborador.</li>
-<li>Apresentar regras básicas de conduta no ambiente de trabalho.</li>
+<li>Apresentar a empresa, seus valores e compromissos.</li>
+<li>Orientar o colaborador sobre segurança, qualidade e responsabilidade.</li>
+<li>Reforçar a importância do cumprimento das normas internas.</li>
 <li>Conscientizar sobre prevenção de acidentes e cuidado com a vida.</li>
+<li>Promover postura profissional, organização e respeito no ambiente de trabalho.</li>
 </ul>
 
-</div>
-
-<div class="box">
-
-<h2 style="font-size:24px;border:none;margin-top:0;">
-Conteúdo Programático
-</h2>
+<h2>Conteúdo Programático</h2>
 
 <ul>
 <li>Apresentação da Pavidez Engenharia.</li>
-<li>Política de Segurança do Trabalho.</li>
-<li>Uso correto de EPIs e respeito às normas internas.</li>
-<li>Comunicação de riscos, incidentes e condições inseguras.</li>
-<li>Organização, disciplina e responsabilidade nas frentes de serviço.</li>
-<li>Cuidados com meio ambiente, limpeza e descarte adequado.</li>
+<li>Visão, valores e compromissos da empresa.</li>
+<li>Responsabilidade com segurança e qualidade.</li>
+<li>Conduta profissional no ambiente de trabalho.</li>
+<li>Uso correto de orientações, procedimentos e equipamentos de proteção.</li>
+<li>Cuidados com organização, meio ambiente e limpeza das frentes de serviço.</li>
 <li>Direitos, deveres e responsabilidade individual do colaborador.</li>
 </ul>
 
-</div>
-
-<div class="box">
-
-<h2 style="font-size:24px;border:none;margin-top:0;">
-Carga Horária
-</h2>
+<h2>Carga Horária</h2>
 
 <p>
-⏱️ Treinamento introdutório obrigatório, com vídeo institucional e avaliação
-de entendimento ao final.
+⏱️ <strong>30 minutos</strong>
 </p>
 
-<p>
-Parte das orientações poderá ser complementada presencialmente conforme
-procedimentos internos da empresa, local de trabalho e exigências aplicáveis.
-</p>
-
+<div class="box-alerta">
+Parte das orientações deste treinamento poderá ser complementada presencialmente,
+conforme procedimentos internos da empresa, local de trabalho e exigências aplicáveis.
 </div>
 
-<div class="box">
-
-<h2 style="font-size:24px;border:none;margin-top:0;">
-🎥 Vídeo Institucional
-</h2>
+<h2>🎥 Vídeo Institucional</h2>
 
 <p>
-Assista ao vídeo institucional abaixo antes de realizar a avaliação.
+Assista ao vídeo institucional antes de realizar a avaliação.
 </p>
 
 <video id="videoIntegracao" controls>
 <source src="Pavidez_30s_Piano.mp4" type="video/mp4">
 </video>
 
-<p id="statusVideo"
-style="font-weight:bold;color:red;margin-top:15px;">
+<p id="statusVideo">
 ⚠️ Assista o vídeo completo para liberar a avaliação.
 </p>
 
-</div>
+<div class="avaliacao">
 
-<section class="box">
-
-<h2 style="margin-top:0;border:none;padding:0;">
-📝 Avaliação de Integração
-</h2>
+<h2>📝 Avaliação de Integração</h2>
 
 <input type="text" id="nome" placeholder="Nome Completo">
 
@@ -305,9 +282,7 @@ style="font-weight:bold;color:red;margin-top:15px;">
 Declaro que realizei este treinamento.
 </label>
 
-<br><br>
-
-<h3>Perguntas</h3>
+<h2>Perguntas</h2>
 
 <div class="pergunta">
 <p>1. A Pavidez Engenharia prioriza:</p>
@@ -328,7 +303,7 @@ Somente produtividade
 
 <label>
 <input type="radio" name="q2" value="certo">
-Respeitar normas e procedimentos
+Respeitar normas, procedimentos e orientações da empresa
 </label>
 
 <label>
@@ -342,7 +317,7 @@ Ignorar orientações de segurança
 
 <label>
 <input type="radio" name="q3" value="certo">
-Compromisso, responsabilidade e conduta profissional
+Compromisso, responsabilidade e postura profissional
 </label>
 
 <label>
@@ -352,11 +327,11 @@ Improvisações inseguras
 </div>
 
 <div class="pergunta">
-<p>4. O compromisso ambiental significa:</p>
+<p>4. O cuidado com meio ambiente significa:</p>
 
 <label>
 <input type="radio" name="q4" value="certo">
-Atuar com responsabilidade ambiental
+Manter organização, limpeza e descarte adequado
 </label>
 
 <label>
@@ -370,7 +345,7 @@ Desconsiderar impactos ambientais
 
 <label>
 <input type="radio" name="q5" value="certo">
-Orientar o colaborador sobre regras, cultura e segurança
+Orientar o colaborador sobre empresa, regras e segurança
 </label>
 
 <label>
@@ -381,11 +356,9 @@ Apenas liberar acesso à empresa
 
 <button onclick="corrigir()">Finalizar Avaliação</button>
 
-<p id="resultado"
-style="font-weight:bold;font-size:22px;margin-top:20px;">
-</p>
+<p id="resultado" style="font-weight:bold;font-size:20px;margin-top:20px;"></p>
 
-</section>
+</div>
 
 </main>
 
