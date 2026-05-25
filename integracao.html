@@ -229,13 +229,9 @@ e valores da Pavidez Engenharia.
 <ul>
 
 <li>Apresentação da empresa</li>
-
 <li>Política de Segurança do Trabalho</li>
-
 <li>Normas Regulamentadoras aplicáveis</li>
-
 <li>Conduta e Compliance</li>
-
 <li>Direitos e deveres do colaborador</li>
 
 </ul>
@@ -253,9 +249,7 @@ margin-top:0;
 </h2>
 
 <p>
-
 Assista ao vídeo institucional abaixo.
-
 </p>
 
 <video
@@ -317,13 +311,9 @@ margin-top:0;
 <ul>
 
 <li>Respeito à vida e à segurança</li>
-
 <li>Ética e transparência</li>
-
 <li>Compromisso ambiental</li>
-
 <li>Valorização dos colaboradores</li>
-
 <li>Conformidade com legislações e normas</li>
 
 </ul>
@@ -626,11 +616,21 @@ resultado.style.color =
 const ipCapturado =
 await pegarIP();
 
+const dispositivoCapturado =
+navigator.userAgent;
+
+alert("IP capturado: " + ipCapturado);
+alert("Dispositivo: " + dispositivoCapturado);
+
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
 
 method: "POST",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
 
 body: JSON.stringify({
 
@@ -639,12 +639,25 @@ funcao: funcao,
 cpf: cpf,
 nr: "INTEGRAÇÃO",
 nota: pontos,
-
 ip: ipCapturado,
-
-dispositivo: navigator.userAgent
+dispositivo: dispositivoCapturado
 
 })
+
+})
+.then(res => res.text())
+.then(resposta => {
+
+console.log(resposta);
+
+alert("Treinamento enviado com sucesso!");
+
+})
+.catch(erro => {
+
+console.log(erro);
+
+alert("Erro ao enviar treinamento!");
 
 });
 
