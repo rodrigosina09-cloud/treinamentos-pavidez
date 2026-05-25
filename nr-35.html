@@ -50,6 +50,8 @@ margin-bottom:15px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
+box-sizing:border-box;
+text-transform:uppercase;
 }
 
 section{
@@ -145,11 +147,9 @@ dos trabalhadores envolvidos direta ou indiretamente com esta atividade.
 </p>
 
 <div class="info-carga">
-
 Parte da carga horária deste treinamento poderá ser complementada
 presencialmente conforme procedimentos internos da empresa e exigências
 legais aplicáveis.
-
 </div>
 
 </section>
@@ -162,7 +162,7 @@ legais aplicáveis.
 id="videoTreinamento"
 width="100%"
 height="500"
-src="https://www.youtube.com/embed/-buEXIwBfF8"
+src="https://www.youtube.com/embed/-buEXIwBfF8?enablejsapi=1"
 title="NR-35"
 frameborder="0"
 allowfullscreen>
@@ -170,9 +170,7 @@ allowfullscreen>
 
 <p id="statusVideo"
 style="color:red;font-weight:bold;margin-top:10px;">
-
-⚠️ Assista o vídeo antes de realizar a avaliação.
-
+⚠️ Assista o vídeo completo antes de realizar a avaliação.
 </p>
 
 </section>
@@ -191,15 +189,13 @@ placeholder="Função">
 
 <input type="text"
 id="cpf"
-placeholder="CPF">
+placeholder="CPF"
+maxlength="14"
+style="text-transform:none;">
 
 <label>
-
-<input type="checkbox"
-id="declaracao">
-
+<input type="checkbox" id="declaracao">
 Declaro que realizei este treinamento.
-
 </label>
 
 <br><br>
@@ -207,7 +203,6 @@ Declaro que realizei este treinamento.
 <h3>Perguntas</h3>
 
 <div class="pergunta">
-
 <p>1. Trabalho em altura é considerado acima de:</p>
 
 <label>
@@ -219,11 +214,9 @@ Declaro que realizei este treinamento.
 <input type="radio" name="q1" value="errado">
 50 centímetros
 </label>
-
 </div>
 
 <div class="pergunta">
-
 <p>2. O cinto tipo paraquedista serve para:</p>
 
 <label>
@@ -235,11 +228,9 @@ Proteção contra quedas
 <input type="radio" name="q2" value="errado">
 Somente identificação
 </label>
-
 </div>
 
 <div class="pergunta">
-
 <p>3. Antes do trabalho em altura deve existir:</p>
 
 <label>
@@ -251,11 +242,9 @@ Análise de risco
 <input type="radio" name="q3" value="errado">
 Apenas autorização verbal
 </label>
-
 </div>
 
 <div class="pergunta">
-
 <p>4. Sistemas de ancoragem devem:</p>
 
 <label>
@@ -267,11 +256,9 @@ Estar seguros e inspecionados
 <input type="radio" name="q4" value="errado">
 Ser improvisados
 </label>
-
 </div>
 
 <div class="pergunta">
-
 <p>5. O trabalhador deve:</p>
 
 <label>
@@ -283,12 +270,9 @@ Cumprir os procedimentos de segurança
 <input type="radio" name="q5" value="errado">
 Ignorar medidas preventivas
 </label>
-
 </div>
 
-<button onclick="corrigir()">
-Finalizar Avaliação
-</button>
+<button onclick="corrigir()">Finalizar Avaliação</button>
 
 <p id="resultado"
 style="font-weight:bold;font-size:22px;margin-top:20px;">
@@ -299,18 +283,135 @@ style="font-weight:bold;font-size:22px;margin-top:20px;">
 </main>
 
 <footer>
-
-<p>
-© Pavidez Engenharia – Plataforma de Treinamentos Corporativos
-</p>
-
+<p>© Pavidez Engenharia – Plataforma de Treinamentos Corporativos</p>
 </footer>
+
+<script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
 
-let videoAssistido = true;
+let videoAssistido = false;
+let player;
 
-function corrigir(){
+function onYouTubeIframeAPIReady(){
+
+player = new YT.Player("videoTreinamento", {
+events:{
+"onStateChange": onPlayerStateChange
+}
+});
+
+}
+
+function onPlayerStateChange(event){
+
+if(event.data === YT.PlayerState.ENDED){
+
+videoAssistido = true;
+
+document
+.getElementById("statusVideo")
+.innerHTML =
+"✅ Vídeo concluído";
+
+document
+.getElementById("statusVideo")
+.style.color =
+"green";
+
+}
+
+}
+
+document
+.getElementById("cpf")
+.addEventListener("input", function(e){
+
+let value =
+e.target.value.replace(/\D/g,'');
+
+if(value.length > 11){
+value = value.slice(0,11);
+}
+
+value = value.replace(/(\d{3})(\d)/,"$1.$2");
+value = value.replace(/(\d{3})(\d)/,"$1.$2");
+value = value.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+
+e.target.value = value;
+
+});
+
+function validarCPF(cpf){
+
+cpf = cpf.replace(/\D/g,'');
+
+if(cpf.length !== 11){
+return false;
+}
+
+if(/^(\d)\1+$/.test(cpf)){
+return false;
+}
+
+let soma = 0;
+let resto;
+
+for(let i = 1; i <= 9; i++){
+soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+}
+
+resto = (soma * 10) % 11;
+
+if((resto == 10) || (resto == 11)){
+resto = 0;
+}
+
+if(resto != parseInt(cpf.substring(9,10))){
+return false;
+}
+
+soma = 0;
+
+for(let i = 1; i <= 10; i++){
+soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+}
+
+resto = (soma * 10) % 11;
+
+if((resto == 10) || (resto == 11)){
+resto = 0;
+}
+
+if(resto != parseInt(cpf.substring(10,11))){
+return false;
+}
+
+return true;
+
+}
+
+async function pegarIP(){
+
+try{
+
+const resposta =
+await fetch("https://api.ipify.org?format=json");
+
+const dados =
+await resposta.json();
+
+return dados.ip || "IP não capturado";
+
+}catch(e){
+
+return "IP não capturado";
+
+}
+
+}
+
+async function corrigir(){
 
 if(!videoAssistido){
 
@@ -321,13 +422,13 @@ return;
 }
 
 let nome =
-document.getElementById("nome").value;
+document.getElementById("nome").value.trim().toUpperCase();
 
 let funcao =
-document.getElementById("funcao").value;
+document.getElementById("funcao").value.trim().toUpperCase();
 
 let cpf =
-document.getElementById("cpf").value;
+document.getElementById("cpf").value.trim();
 
 let declaracao =
 document.getElementById("declaracao").checked;
@@ -335,6 +436,30 @@ document.getElementById("declaracao").checked;
 if(nome === "" || funcao === "" || cpf === ""){
 
 alert("Preencha todos os dados!");
+
+return;
+
+}
+
+if(nome.split(" ").length < 2){
+
+alert("Digite nome e sobrenome!");
+
+return;
+
+}
+
+if(funcao.length < 4){
+
+alert("Digite a função completa!");
+
+return;
+
+}
+
+if(!validarCPF(cpf)){
+
+alert("CPF inválido!");
 
 return;
 
@@ -384,9 +509,23 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
+const ipCapturado =
+await pegarIP();
+
+const dispositivoCapturado =
+navigator.userAgent;
+
+fetch(
+"https://script.google.com/macros/s/AKfycbymf4A_TxKis-gyMM-XXBzIm0wx4ns-bwN2hPcxpQkHLSLtt4PdPZkEIjfPORt7dKlGNg/exec",
+{
 
 method: "POST",
+
+mode: "no-cors",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
 
 body: JSON.stringify({
 
@@ -395,16 +534,16 @@ funcao: funcao,
 cpf: cpf,
 nr: "NR-35",
 nota: pontos,
-
-ip: "IP não identificado",
-
-dispositivo: navigator.userAgent
+ip: ipCapturado,
+dispositivo: dispositivoCapturado
 
 })
 
-});
+}
 
-} else {
+);
+
+}else{
 
 resultado.innerHTML =
 "❌ Reprovado";
