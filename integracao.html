@@ -620,13 +620,14 @@ const dispositivoCapturado =
 navigator.userAgent;
 
 alert("IP capturado: " + ipCapturado);
-alert("Dispositivo: " + dispositivoCapturado);
 
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
 
 method: "POST",
+
+mode: "no-cors",
 
 headers:{
 "Content-Type":"text/plain;charset=utf-8"
@@ -644,22 +645,9 @@ dispositivo: dispositivoCapturado
 
 })
 
-})
-.then(res => res.text())
-.then(resposta => {
-
-console.log(resposta);
+});
 
 alert("Treinamento enviado com sucesso!");
-
-})
-.catch(erro => {
-
-console.log(erro);
-
-alert("Erro ao enviar treinamento!");
-
-});
 
 }else{
 
