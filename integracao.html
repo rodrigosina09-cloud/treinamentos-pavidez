@@ -529,6 +529,26 @@ document
 
 });
 
+async function pegarIP(){
+
+try{
+
+const resposta =
+await fetch("https://api.ipify.org?format=json");
+
+const dados =
+await resposta.json();
+
+return dados.ip || "IP não capturado";
+
+}catch(e){
+
+return "IP não capturado";
+
+}
+
+}
+
 async function corrigir(){
 
 if(!videoAssistido){
@@ -603,6 +623,9 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
+const ipCapturado =
+await pegarIP();
+
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
 {
@@ -617,7 +640,7 @@ cpf: cpf,
 nr: "INTEGRAÇÃO",
 nota: pontos,
 
-ip: "",
+ip: ipCapturado,
 
 dispositivo: navigator.userAgent
 
