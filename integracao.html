@@ -608,7 +608,7 @@ document.getElementById("resultado");
 if(pontos >= 4){
 
 resultado.innerHTML =
-"✅ Aprovado";
+"✅ Aprovado. Treinamento registrado.";
 
 resultado.style.color =
 "green";
@@ -619,7 +619,16 @@ await pegarIP();
 const dispositivoCapturado =
 navigator.userAgent;
 
-alert("IP capturado: " + ipCapturado);
+let dadosEnvio =
+new URLSearchParams();
+
+dadosEnvio.append("nome", nome);
+dadosEnvio.append("funcao", funcao);
+dadosEnvio.append("cpf", cpf);
+dadosEnvio.append("nr", "INTEGRAÇÃO");
+dadosEnvio.append("nota", pontos);
+dadosEnvio.append("ip", ipCapturado);
+dadosEnvio.append("dispositivo", dispositivoCapturado);
 
 fetch(
 "https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
@@ -629,25 +638,11 @@ method: "POST",
 
 mode: "no-cors",
 
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
+body: dadosEnvio
 
-body: JSON.stringify({
+}
 
-nome: nome,
-funcao: funcao,
-cpf: cpf,
-nr: "INTEGRAÇÃO",
-nota: pontos,
-ip: ipCapturado,
-dispositivo: dispositivoCapturado
-
-})
-
-});
-
-alert("Treinamento enviado com sucesso!");
+);
 
 }else{
 
