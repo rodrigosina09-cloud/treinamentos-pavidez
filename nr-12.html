@@ -51,6 +51,7 @@ border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
 box-sizing:border-box;
+text-transform:uppercase;
 }
 
 section{
@@ -159,7 +160,7 @@ legais aplicáveis.
 id="videoTreinamento"
 width="100%"
 height="500"
-src="https://www.youtube.com/embed/XAx2BPiL5oc"
+src="https://www.youtube.com/embed/XAx2BPiL5oc?enablejsapi=1"
 title="NR-12"
 frameborder="0"
 allowfullscreen>
@@ -168,7 +169,7 @@ allowfullscreen>
 <p id="statusVideo"
 style="color:red;font-weight:bold;margin-top:10px;">
 
-⚠️ Assista o vídeo antes de realizar a avaliação.
+⚠️ Assista o vídeo completo antes de realizar a avaliação.
 
 </p>
 
@@ -188,7 +189,9 @@ placeholder="Função">
 
 <input type="text"
 id="cpf"
-placeholder="CPF">
+placeholder="CPF"
+maxlength="14"
+style="text-transform:none;">
 
 <label>
 
@@ -303,11 +306,134 @@ style="font-weight:bold;font-size:22px;margin-top:20px;">
 
 </footer>
 
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
 
-let videoAssistido = true;
+let videoAssistido = false;
+let player;
 
-function corrigir(){
+function onYouTubeIframeAPIReady(){
+
+player = new YT.Player("videoTreinamento", {
+
+events:{
+"onStateChange": onPlayerStateChange
+}
+
+});
+
+}
+
+function onPlayerStateChange(event){
+
+if(event.data === YT.PlayerState.ENDED){
+
+videoAssistido = true;
+
+document
+.getElementById("statusVideo")
+.innerHTML =
+"✅ Vídeo concluído";
+
+document
+.getElementById("statusVideo")
+.style.color =
+"green";
+
+}
+
+}
+
+document
+.getElementById("cpf")
+.addEventListener("input", function(e){
+
+let value =
+e.target.value.replace(/\D/g,'');
+
+if(value.length > 11){
+value = value.slice(0,11);
+}
+
+value = value.replace(/(\d{3})(\d)/,"$1.$2");
+value = value.replace(/(\d{3})(\d)/,"$1.$2");
+value = value.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+
+e.target.value = value;
+
+});
+
+function validarCPF(cpf){
+
+cpf = cpf.replace(/\D/g,'');
+
+if(cpf.length !== 11){
+return false;
+}
+
+if(/^(\d)\1+$/.test(cpf)){
+return false;
+}
+
+let soma = 0;
+let resto;
+
+for(let i = 1; i <= 9; i++){
+soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+}
+
+resto = (soma * 10) % 11;
+
+if((resto == 10) || (resto == 11)){
+resto = 0;
+}
+
+if(resto != parseInt(cpf.substring(9,10))){
+return false;
+}
+
+soma = 0;
+
+for(let i = 1; i <= 10; i++){
+soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+}
+
+resto = (soma * 10) % 11;
+
+if((resto == 10) || (resto == 11)){
+resto = 0;
+}
+
+if(resto != parseInt(cpf.substring(10,11))){
+return false;
+}
+
+return true;
+
+}
+
+async function pegarIP(){
+
+try{
+
+const resposta =
+await fetch("https://api.ipify.org?format=json");
+
+const dados =
+await resposta.json();
+
+return dados.ip || "IP não capturado";
+
+}catch(e){
+
+return "IP não capturado";
+
+}
+
+}
+
+async function corrigir(){
 
 if(!videoAssistido){
 
@@ -318,13 +444,13 @@ return;
 }
 
 let nome =
-document.getElementById("nome").value;
+document.getElementById("nome").value.trim().toUpperCase();
 
 let funcao =
-document.getElementById("funcao").value;
+document.getElementById("funcao").value.trim().toUpperCase();
 
 let cpf =
-document.getElementById("cpf").value;
+document.getElementById("cpf").value.trim();
 
 let declaracao =
 document.getElementById("declaracao").checked;
@@ -332,6 +458,30 @@ document.getElementById("declaracao").checked;
 if(nome === "" || funcao === "" || cpf === ""){
 
 alert("Preencha todos os dados!");
+
+return;
+
+}
+
+if(nome.split(" ").length < 2){
+
+alert("Digite nome e sobrenome!");
+
+return;
+
+}
+
+if(funcao.length < 4){
+
+alert("Digite a função completa!");
+
+return;
+
+}
+
+if(!validarCPF(cpf)){
+
+alert("CPF inválido!");
 
 return;
 
@@ -381,9 +531,23 @@ resultado.innerHTML =
 resultado.style.color =
 "green";
 
-fetch("https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec", {
+const ipCapturado =
+await pegarIP();
+
+const dispositivoCapturado =
+navigator.userAgent;
+
+fetch(
+"https://script.google.com/macros/s/AKfycbymf4A_TxKis-gyMM-XXBzIm0wx4ns-bwN2hPcxpQkHLSLtt4PdPZkEIjfPORt7dKlGNg/exec",
+{
 
 method: "POST",
+
+mode: "no-cors",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
 
 body: JSON.stringify({
 
@@ -392,16 +556,16 @@ funcao: funcao,
 cpf: cpf,
 nr: "NR-12",
 nota: pontos,
-
-ip: "IP não identificado",
-
-dispositivo: navigator.userAgent
+ip: ipCapturado,
+dispositivo: dispositivoCapturado
 
 })
 
-});
+}
 
-} else {
+);
+
+}else{
 
 resultado.innerHTML =
 "❌ Reprovado";
