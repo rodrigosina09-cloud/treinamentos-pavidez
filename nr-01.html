@@ -51,6 +51,11 @@ border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
 box-sizing:border-box;
+text-transform:uppercase;
+}
+
+#cpf{
+text-transform:none;
 }
 
 section{
@@ -177,7 +182,10 @@ style="color:red;font-weight:bold;margin-top:10px;">
 
 <input type="text" id="funcao" placeholder="Função">
 
-<input type="text" id="cpf" placeholder="CPF" maxlength="14">
+<input type="text"
+id="cpf"
+placeholder="CPF"
+maxlength="14">
 
 <label>
 <input type="checkbox" id="declaracao">
@@ -258,9 +266,13 @@ Trata apenas de uniformes
 </label>
 </div>
 
-<button onclick="corrigir()">Finalizar Avaliação</button>
+<button onclick="corrigir()">
+Finalizar Avaliação
+</button>
 
-<p id="resultado" style="font-weight:bold;font-size:22px;margin-top:20px;"></p>
+<p id="resultado"
+style="font-weight:bold;font-size:22px;margin-top:20px;">
+</p>
 
 </section>
 
@@ -404,10 +416,10 @@ return;
 }
 
 let nome =
-document.getElementById("nome").value.trim();
+document.getElementById("nome").value.trim().toUpperCase();
 
 let funcao =
-document.getElementById("funcao").value.trim();
+document.getElementById("funcao").value.trim().toUpperCase();
 
 let cpf =
 document.getElementById("cpf").value.trim();
