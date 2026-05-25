@@ -51,6 +51,11 @@ border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
 box-sizing:border-box;
+text-transform:uppercase;
+}
+
+#cpf{
+text-transform:none;
 }
 
 section{
@@ -443,10 +448,10 @@ return;
 }
 
 let nome =
-document.getElementById("nome").value.trim();
+document.getElementById("nome").value.trim().toUpperCase();
 
 let funcao =
-document.getElementById("funcao").value.trim();
+document.getElementById("funcao").value.trim().toUpperCase();
 
 let cpf =
 document.getElementById("cpf").value.trim();
