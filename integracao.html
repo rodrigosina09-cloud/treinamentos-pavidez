@@ -274,74 +274,6 @@ margin-top:15px;
 
 </div>
 
-<div class="box">
-
-<h2 style="
-font-size:24px;
-border:none;
-margin-top:0;
-">
-
-🏢 Visão da Empresa
-
-</h2>
-
-<p>
-
-A Pavidez Engenharia busca excelência em suas operações,
-priorizando qualidade, segurança, responsabilidade social,
-sustentabilidade e valorização das pessoas.
-
-</p>
-
-</div>
-
-<div class="box">
-
-<h2 style="
-font-size:24px;
-border:none;
-margin-top:0;
-">
-
-🤝 Valores e Compromissos
-
-</h2>
-
-<ul>
-
-<li>Respeito à vida e à segurança</li>
-<li>Ética e transparência</li>
-<li>Compromisso ambiental</li>
-<li>Valorização dos colaboradores</li>
-<li>Conformidade com legislações e normas</li>
-
-</ul>
-
-</div>
-
-<div class="box">
-
-<h2 style="
-font-size:24px;
-border:none;
-margin-top:0;
-">
-
-⚖️ Respeito à Legislação
-
-</h2>
-
-<p>
-
-Todos os colaboradores devem seguir as Normas Regulamentadoras,
-procedimentos internos, políticas corporativas e legislações aplicáveis,
-garantindo um ambiente de trabalho seguro e organizado.
-
-</p>
-
-</div>
-
 <section style="
 margin-top:60px;
 background:#f5f5f5;
@@ -608,7 +540,7 @@ document.getElementById("resultado");
 if(pontos >= 4){
 
 resultado.innerHTML =
-"✅ Aprovado. Enviando registro...";
+"✅ Aprovado. Treinamento registrado.";
 
 resultado.style.color =
 "green";
@@ -620,7 +552,7 @@ const dispositivoCapturado =
 navigator.userAgent;
 
 fetch(
-"https://script.google.com/macros/s/AKfycbz70yDtVnHaOK0pHAh94FWLiX58mmikKsW0cuulbH7BCAXSAyJV_BgeN3oWPGAr4DEBxg/exec",
+"https://script.google.com/macros/s/AKfycbymf4A_TxKis-gyMM-XXBzIm0wx4ns-bwN2hPcxpQkHLSLtt4PdPZkEIjfPORt7dKlGNg/exec",
 {
 
 method: "POST",
@@ -646,12 +578,6 @@ dispositivo: dispositivoCapturado
 }
 
 );
-
-resultado.innerHTML =
-"✅ Aprovado. Treinamento registrado.";
-
-resultado.style.color =
-"green";
 
 }else{
 
